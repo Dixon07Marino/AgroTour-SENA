@@ -52,3 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
         carousel.scrollLeft = scrollLeft - walk;
     });
 });
+
+const disparador = document.getElementById("disparador")
+const modal = document.getElementById("modal")
+const cerrar = document.getElementById("cerrar")
+
+document.addEventListener('load',()=>{
+    modal.style.display = "block"
+})
+
+disparador.addEventListener('click',()=>{
+    modal.style.display = "block"
+})
+
+cerrar.addEventListener('click',()=>{
+    modal.style.display = 'none';
+})

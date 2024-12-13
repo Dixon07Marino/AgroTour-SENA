@@ -6,26 +6,63 @@ body {
   box-sizing: border-box;
 }
 
+html{
+  font-size: 62.5%;
+}
+
+i{
+  cursor: pointer;
+  color: black;
+}
+
+p{
+  font-size: 2.5rem;
+}
+dialog{
+  border-style: none;
+  width: 20rem;
+  height: 12rem;
+  background-color: greenyellow;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 8rem;
+  left: 90rem;
+  padding: 0;
+}
+dialog>button{
+  border-style: none;
+  background-color: greenyellow;
+  width: 100%;
+  height: 4rem;
+  transition: transform 1s;
+}
+dialog>button:hover{
+  background-color: #009800;
+}
+dialog>#cerrar:hover{
+  transform: scale(0.8);
+}
 /* Seccion del nav */
 .navmenu {
-  font-size: 20px;
+  font-size: 5rem;
   display: flex;
   background-color: rgb(47, 177, 0); /* Color original */
   width: 100%; /* Se asegura de ocupar todo el ancho */
   justify-content: space-between;
   align-items: center;
-  gap: 30px; /* Reduce el espacio para evitar desbordamiento */
-  height: 50px;
-  padding: 30px 15px; /* Ajuste de padding para dar más espacio */
+  gap: 3rem;
+  height: 6rem;
+  padding: 3rem 1.5rem; /* Ajuste de padding para dar más espacio */
   box-sizing: border-box; /* Incluye el padding en el ancho total */
-  position: relative;
-  overflow: hidden; /* Evita cualquier desbordamiento visible */
+  overflow: hidden;
 }
 
 .home {
-  font-size: 25px;
+  font-size: 2.5rem;
   border-radius: 5px;
-  padding: 6px;
+  padding: 0.6rem;
   transition: background 0.3s, transform 0.3s;
 }
 
@@ -37,19 +74,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Espaciado ajustado entre botones */
+  gap: 6rem;
 }
 
 .button {
   background: transparent;
-  padding: 6px;
-  gap: 5px;
+  padding: 0.6rem;
+  gap: 0.5rem;
   display: flex;
-  justify-content: center;
+  font-size: 1.8rem;
   align-items: center;
-  position: relative;
-  height: 40px;
-  border-radius: 5px;
+  height: 4rem;
+  border-radius: 0.5rem;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -81,10 +117,16 @@ body {
 }
 
 .profile {
+  border: 0.2rem solid black;
+  display: flex;
   font-size: 30px;
   padding: 6px;
   border-radius: 5px;
   transition: background 0.3s, transform 0.3s;
+  gap: 0.8rem;
+}
+.profile::before{
+  content: "≡";
 }
 
 .profile:hover {
@@ -94,7 +136,7 @@ body {
 /* Seccion del carousel */
 .hero-section {
   background-color: rgb(174, 215, 159);
-  padding: 30px;
+  padding: 3rem;
   position: relative;
 }
 
@@ -107,19 +149,19 @@ body {
 .carousel {
   display: flex;
   transition: transform 0.5s ease;
-  gap: 20px;
-  padding: 20px 30px;
+  gap: 2rem;
+  padding: 2rem 3rem;
 }
 
 .carousel-item {
-  flex: 0 0 300px;
+  flex: 0 0 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f2f2f2;
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -130,16 +172,16 @@ body {
 
 .carousel-item img {
   width: 100%;
-  height: 200px;
+  height: 20rem;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .package-details {
   background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  margin-top: 10px;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -148,7 +190,7 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .package-price {
@@ -161,19 +203,19 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .package-actions button {
   background-color: #009800;
   color: #fff;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1.5rem;
   flex: 1;
-  margin: 5px;
+  margin: 0.5rem;
 }
 
 .carousel-controls {
@@ -189,11 +231,10 @@ body {
   background-color: rgba(0, 152, 0, 0.7);
   color: #fff;
   border: none;
-  padding: 10px 18px;
+  padding: 1rem 1.8rem;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
-  z-index: 10;
+  font-size: 2.1rem;
 }
 
 /* Seccion de contacto - Footer */
@@ -204,7 +245,7 @@ footer {
 }
 
 .about-us, .contact-us {
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -217,16 +258,16 @@ footer {
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .social-media a img {
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  padding: 6px;
-  border-radius: 5px;
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
   transition: background 0.4s, transform 0.3s;
 }
 
