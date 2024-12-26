@@ -1,70 +1,83 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentIndex = 0;
-
-    // Package click to show/hide details
-    carouselItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const details = item.querySelector('.package-details');
-            details.style.display = details.style.display === 'none' ? 'block' : 'none';
-        });
-    });
-
-    // Carousel navigation
-    function moveCarousel(direction) {
-        const itemWidth = carouselItems[0].offsetLeft + 20; // width + gap
-        currentIndex = direction === 'next' 
-            ? Math.min(currentIndex + 1, carouselItems.length - 1)
-            : Math.max(currentIndex - 1, 0);
-        
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+class Modal {
+    constructor(triggerId, modalId, closeId) {
+        this.trigger = document.getElementById(triggerId);
+        this.modal = document.getElementById(modalId);
+        this.close = document.getElementById(closeId);
+        this.init();
     }
 
-    prevBtn.addEventListener('click', () => moveCarousel('prev'));
-    nextBtn.addEventListener('click', () => moveCarousel('next'));
+    init() {
+        this.hideModal(); // Ensure modal is hidden initially
+        this.trigger.addEventListener('click', () => this.showModal());
+        this.close.addEventListener('click', () => this.hideModal());
+    }
 
-    // Optional: Mouse drag to scroll
-    let isDragging = false;
-    let startX, scrollLeft;
+    showModal() {
+        this.modal.style.display = 'block';
+    }
 
-    carousel.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-    });
+    hideModal() {
+        this.modal.style.display = 'none';
+    }
+}
 
-    carousel.addEventListener('mouseleave', () => {
-        isDragging = false;
-    });
+class Carousel {
+    constructor(carouselSelector, prevBtnSelector, nextBtnSelector) {
+        this.carousel = document.querySelector(carouselSelector);
+        this.carouselItems = Array.from(this.carousel.children);
+        this.prevBtn = document.querySelector(prevBtnSelector);
+        this.nextBtn = document.querySelector(nextBtnSelector);
+        this.currentIndex = 0;
+        this.init();
+    }
 
-    carousel.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
+    init() {
+        this.carouselItems.forEach(item => {
+            item.addEventListener('click', () => this.toggleDetails(item));
+        });
+        this.prevBtn.addEventListener('click', () => this.move('prev'));
+        this.nextBtn.addEventListener('click', () => this.move('next'));
+        this.enableDragging();
+    }
 
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2; // Multiply by 2 to increase drag sensitivity
-        carousel.scrollLeft = scrollLeft - walk;
-    });
+    toggleDetails(item) {
+        const details = item.querySelector('.package-details');
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    }
+
+    move(direction) {
+        const itemWidth = this.carouselItems[0].offsetLeft + 20; // width + gap
+        if (direction === 'next') {
+            this.currentIndex = Math.min(this.currentIndex + 1, this.carouselItems.length - 1);
+        } else {
+            this.currentIndex = Math.max(this.currentIndex - 1, 0);
+        }
+        this.carousel.style.transform = `translateX(-${this.currentIndex * itemWidth}px)`;
+    }
+
+    enableDragging() {
+        let isDragging = false;
+        let startX, scrollLeft;
+
+        this.carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - this.carousel.offsetLeft;
+            scrollLeft = this.carousel.scrollLeft;
+        });
+
+        this.carousel.addEventListener('mouseleave', () => isDragging = false);
+        this.carousel.addEventListener('mouseup', () => isDragging = false);
+        this.carousel.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - this.carousel.offsetLeft;
+            const walk = (x - startX) * 2; // Multiply by 2 to increase drag sensitivity
+            this.carousel.scrollLeft = scrollLeft - walk;
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Modal('disparador', 'modal', 'cerrar');
+    new Carousel('.carousel', '.prev-btn', '.next-btn');
 });
-
-const disparador = document.getElementById("disparador")
-const modal = document.getElementById("modal")
-const cerrar = document.getElementById("cerrar")
-
-document.addEventListener('load',()=>{
-    modal.style.display = "block"
-})
-
-disparador.addEventListener('click',()=>{
-    modal.style.display = "block"
-})
-
-cerrar.addEventListener('click',()=>{
-    modal.style.display = 'none';
-})
