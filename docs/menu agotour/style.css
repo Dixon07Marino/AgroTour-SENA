@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Alata", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 240, 227);
+}
+
+#titulo {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background: rgb(35, 154, 20);
+    padding: 10px;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#titulo button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#titulo button:before {
+    content: "≡"; /* Three lines symbol */
+}
+
+#subtitulo {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    margin: 10px 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content-box {
+    background: rgb(242, 246, 234);
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(66, 127, 58, 0.881);
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.content-box .title {
+    color: white;
+    background: rgba(66, 127, 58, 0.881);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.content-box .title:hover::after {
+    content: attr(data-description);
+    display: block;
+    position: absolute;
+    background: rgba(66, 127, 58, 0.881);
+    color: white;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content-box .image-container {
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgba(66, 127, 58, 0.881);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+.content-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgb(35, 154, 20);
+    color: white;
+    height: 100%;
+   
+}
+
+main {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
