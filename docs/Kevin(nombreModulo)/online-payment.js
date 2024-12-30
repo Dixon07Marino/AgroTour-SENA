@@ -568,6 +568,15 @@ let calculateTotalAmount = calculateButton.addEventListener("click",function(){
         modal.style.display = "none";
     });
 
+const dmenu = document.getElementById('dmenu')
+
+function openSidebar(){
+	dmenu.classList.add("on")
+}
+
+function closeSidebar() {
+	dmenu.classList.remove("on")
+}
 
 
 

@@ -1,18 +1,234 @@
-body {
-    background:rgb(230, 240, 227);
-    color:rgb(5, 49, 1);
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-style: oblique;
-    display:flex;
-    justify-content:center;
-    align-content:center;
-    padding:4px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-label{
-    font-size:14px;
-    padding:8px;
+body {
+    background: rgb(230, 240, 227);
+    color:rgb(5, 49, 1);
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+}
+
+form {
+	margin-bottom: 1.5rem;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+span {
+	color: white;
+}
+
+/* SECCION DEL NAV */
+
+.navmenu {
+	font-size: 16px;
+	display: inline-flex;
+	background-color: #239A14;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	gap: 60px;
+	height: 50px;
+	padding: 20px;
+	position: relative;
+}
+
+.navmenu span {
+	font-size: 16.5px;
+}
+
+.home {
+	font-size: 22px;
+	border-radius: 5px;
+	transition: 0.7s;
+	padding-left: 6.5px;
+	padding-right: 6.5px;
+	position: relative;
+	transition: 0.7s;
+	color: white;
+	position: relative;
+}
+/*
+.home::after {
+	content: '';
+	background: linear-gradient(to right, rgb(174, 215, 159), white);
+	height: 5px;
+	width: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 100px;
+	transition: 0.7s ease;
+} 
+
+.home:hover::after {
+	width: 100%;
+	transform: scale (1.1);
+} */
+
+.home:hover {
+	/* background: rgb(174, 215, 159); */
+	background: rgb(9, 71, 4);
+	color: rgb(174, 215, 159);
+}
+
+.pages {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	height: 50px;
+	align-content: center;
+}
+
+.button {
+	background: transparent;
+	padding: 6px;
+	gap: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 40px;
+	border-radius: 5px;
+	transition: 0.7s;
+}
+
+.button:hover {
+	background: rgb(9, 71, 4);
+	cursor: pointer;
+	color: rgb(174, 215, 159);
+}
+
+.button::after {
+	content: '';
+	background: linear-gradient(to right, rgb(174, 215, 159), rgb(174, 215, 159), white);
+	height: 5px;
+	width: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 100px;
+	transition: 0.7s ease;
+} 
+
+.button:hover::after {
+	width: 100%;
+	transform: scale (1.1);
+} 
+
+.pages a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+}
+
+.profile {
+	font-size: 30px;
+	color: white;
+	border-radius: 5px;
+	transition: 0.5s;
+	position: relative;
+	padding-left: 6.5px;
+	padding-right: 6.5px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+}
+
+/*
+.profile::after {
+	content: '';
+	background: linear-gradient(to right, rgb(174, 215, 159), white);
+	height: 5px;
+	width: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 100px;
+	transition: 0.7s ease;
+} 
+
+.profile:hover::after {
+	width: 100%;
+	transform: scale (1.1);
+} */
+
+.profile:hover {
+	background: rgb(9, 71, 4);
+	color: rgb(174, 215, 159);
+}
+
+#dmenu {
+	position: absolute;
+	display: flex;
+	left: 88.7%;
+	top: 0%;
+	flex-direction: column;
+	background: #239A14;
+	border-radius: 0.5rem;
+	transition: 0.5s ease-out;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+
+.off {
+	opacity: 0;
+	z-index: -1;
+}
+
+.on {
+	opacity: 1;
+	z-index: 5;
+}
+
+
+#dmenu i {
+	color: white;
+	font-weight: 600;
+	font-size: 1.6rem;
+	padding-left: 0.4rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.2rem;
+	/* width: 21%; */
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+#dmenu ul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#dmenu li {
+	font-size: 1rem;
+	list-style: none;
+	color: white;
+	width: 100%;
+	padding: 0.5rem;
+	transition: 0.5s ease;
+	text-align: center;
+}
+
+#dmenu a {
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	transition: 0.5s ease;
+	height: 100%;
+	font-weight: 600;
+}
+
+#dmenu li:hover, #dmenu i:hover {
+	background: rgb(9, 71, 4);
 }
 
 input{
@@ -20,14 +236,19 @@ input{
     border-color:rgb(126, 224, 88);
     border-radius: 6px;
     border-style:outset;
-    color:rgb(37, 162, 21);
+    color: rgb(9, 71, 4);
     transition: 0.23s;
     text-align: center;
+	padding: 0.3rem;
 }
 
 input:hover{
-    background-color:rgb(174, 215, 159);
-    color:rgb(102, 174, 74);
+    background-color: white;
+    color: #239A14;
+}
+
+input[type="number"]{
+	text-align: center;
 }
 
 .card{
@@ -39,9 +260,11 @@ input:hover{
     justify-content:center;
     display:flex;
     flex-direction: row;
-    background-color:rgb(242, 246, 234);
-    padding: 8px;
-    transition:0.25s; 
+    background-color: #239A14;
+    padding: 1rem;
+    transition:0.25s;
+	border-radius: 1.5rem;
+	font-weight: 600;
 }
 
 #reserva:hover{
@@ -49,13 +272,14 @@ input:hover{
 }
 
 .titles{
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
     font-style: normal;
     color:rgb(35, 154, 20);
     padding:4px;
     margin:2px;
-    font-size:20px
+    font-size: 1.5rem;
+	text-align: center;
 }
 
 .titles::after{
@@ -71,13 +295,15 @@ input:hover{
 }
 
 .actividades{
-    background-color:rgb(242, 246, 234);
+    background-color: rgb(174, 215, 159);
     width:98%;
     padding:10px;
     display:flex;
     flex-direction:column;
     justify-items:center;
     transition:0.25s; 
+	padding-bottom: 2.3rem;
+	border-radius: 1.5rem;
 }
 
 .actividades:hover{
@@ -92,6 +318,7 @@ input:hover{
     margin:2px auto;
     border-radius: 8px;
     width:70%;
+	text-align: center;
 }
 
 .activity:hover{
@@ -99,25 +326,26 @@ input:hover{
 }
 
 .title{
-    background:rgb(237, 245, 235);
+    background: rgb(174, 215, 159);
     padding:4px;
     width:200px;
     text-align:center;
     justify-self: center;
     margin:4px;
-    color:rgb(9, 71, 4);
-    font-size:14px;
+    color: rgb(9, 71, 4);
+    font-size:17px;
+	font-weight: 600;
 }
 
 .reserve-input{
     background:rgb(174, 215, 159);
-    border-color:rgb(108, 194, 74);
+    border-color: rgb(27, 179, 80);
     width:100px;
     margin:2px auto;
 }
 
 .reserve-input:hover{
-    background:rgb(138, 188, 108);
+    background: white;
     color:rgb(32, 116, 21)
 }
 
@@ -132,10 +360,18 @@ input:hover{
 }
 
 .button-section{
-    justify-content:left;
-    align-content:center;
-    padding:3px;
-    margin-top:10px;
+	display: flex;
+	gap: 1rem;
+    justify-content: center;
+    align-content: center;
+	align-tiems: center;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+.g-button, .c-button {
+	width: 23%;
+	align-self: center;
 }
 
 .services{
@@ -175,49 +411,60 @@ input:hover{
 .success{
     justify-content: center;
     padding:6px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:14px;
-    color:rgb(115, 239, 115);
+    font-family: "Poppins", sans-serif;
+    font-size:14.5px;
+    color: white;
     text-align:center;
     transition:0.23s;
 }
 
 .mistake{
+	position: absolute;
+	left: 0;
+	top: 188.5%;
     background-color: rgb(250, 50, 60);
     justify-content: center;
     padding:6px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:14px;
-    color:rgb(161, 31, 31);
+    color: white;
     text-align:center;
     transition:0.23s;
     border-radius:3px;
     border-style:hidden;
     transform:none;
     transition:0.23s;
+	align-self: center;
+	width: 100&;
 }
 
 .add-button{
-    background-color: rgb(58, 197, 45);
+    background-color: rgb(27, 179, 80);
     margin-left:2px;
     padding:8px;
+	transition: 0.3s ease-out;
 }
 .remove-choice{
     background-color:rgb(250, 50, 60);
-    color:rgb(161, 31, 31);
+    color: white;
     border-color:rgb(255, 106, 0);
-    padding:5px;
+    padding:8px;
     margin:0px;
     display:none;
+	font-weight: 600;
+	transition: 0.3s ease-out;
+	align-self: center;
 }
 .remove-choice:hover{
-    background-color:rgb(252, 131, 115);
-    color:rgb(193, 77, 77);
+    background-color: white;
+    color: rgb(250, 50, 60);
     cursor:pointer;
 }
 
 .add-button{
     cursor:pointer;
+	color: white;
+	font-weight: 600;
 }
 .dataContainer{
     display:flex;
@@ -228,7 +475,7 @@ input:hover{
 }
 
 .info{
-    color:rgb(58, 197, 45);
+    color:rgb(9, 71, 4);
     padding:4px;
     margin-left: 10px;
 }
@@ -236,47 +483,63 @@ input:hover{
 #error-messege{
     display: none;
     transition: 0.23s;
+	width: 100%;
 }
 
 #save-reserve-info{
     background-color: rgb(35, 154, 20);
-    color:rgb(145, 236, 132);
+    color: white;
     border-style: hidden;
     padding:10px;
     border-radius: 9px;
-    transition:0.23s ease;
+    transition:0.3s ease;
+	font-weight: 600;
 }
 
 #save-reserve-info:hover{
     background-color: rgb(50, 235, 25);
-    color:rgba(66, 127, 58, 0.881);
+    color: rgb(9, 71, 4);
     cursor:pointer;
 }
 
 #lodging-services{
-    background-color:rgb(242, 246, 234);
+    background-color: #239A14;
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
-    padding:4px;
-    color:rgb(38, 170, 26);
-    margin:14px
+    padding:0.7rem;
+	padding-left: 1.5rem;
+    color: white;
+	font-weight: 600;
+	border-radius: 1.5rem;
+	/* display: grid;
+	justify-content: left;
+	align-content: left;
+	align-items: center;
+	text-align: left;
+	grid-template-columns: 1fr 1fr;
+	padding-top: 1rem; */
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+	padding-top: 1rem;
+	width: 98%;
 }
 
 #calculate-reserve-price{
-    background-color: rgb(156, 147, 20);
-    color:rgb(229, 236, 132);
+    background-color: #ed7505;
+    color: white;
     cursor:pointer;
     border-style:hidden;
     justify-content:end;
-    margin-left:10px;
     padding:10px;
     border-radius: 9px;
-    transition:0.23s ease;
+    transition:0.3s ease;
+	font-weight: 600;
 }
 
 #calculate-reserve-price:hover{
-    background-color: rgb(235, 218, 25);
-    color:rgba(127, 127, 58, 0.881);
+    background-color: yellow;
+    color: #614003;
     cursor:pointer;
 }
 
@@ -291,28 +554,33 @@ input:hover{
 }
 
 #purchase-info{
-    background:rgb(242, 246, 234);
+	align-items: center;
+    background: rgb(242, 246, 234);
     border:2px;
     border-style:ridge;
     border-color:rgb(38, 170, 26);
     color:rgba(66, 127, 58, 0.881);
-    position:fixed;
+    position:absolute;
     width:70%;
-    padding:6px;
+    padding:10px;
     display:none;
     transition:0.23s;
     z-index: 1000;
+	border-radius: 10px;
 }
 
 #purchase-content{
-    background:rgb(230, 240, 227);
-    font-family: Arial, Helvetica, sans-serif;
+	top: -60%;
+    background: #239A14;
+    font-family: "Poppins", sans-serif;
     font-size:16px;
     text-align:center;
     display:flex;
     flex-direction: column;
-    margin:auto;
     padding:3px;
+	color: white;
+	border-radius: 10px;
+	padding-bottom: 50px;
 }
 #close-modal{
     border-radius:100%;
@@ -324,4 +592,34 @@ input:hover{
 #close-modal:hover{
     background:rgb(50, 235, 25);
     cursor:pointer;
+}
+
+label{
+    font-size:14px;
+    padding:8px;
+	color: white;
+	align-self: center;
+}
+
+.toilet label, .room-4 label{
+	background: rgb(27, 179, 80);
+	padding: -5rem;
+	margin: 1rem;
+	margin-bottom: 0.3rem;
+	border-radius: 1rem;
+}
+
+.credits-form {
+	color: white;
+}
+
+.information {
+	position: relative;
+	left: 1%;
+	margin-bottom: -50px;
+	background: #239A14;
+	color: white;
+	text-align: left;
+	padding-left: 10px;
+	width: 50%;
 }

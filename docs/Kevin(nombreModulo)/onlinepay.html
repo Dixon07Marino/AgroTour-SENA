@@ -9,13 +9,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <header>
+ 
+	<header>
 
+		<nav class="navmenu">
+		
+			<a href=" "><div class="home"><i class="fa-solid fa-house" style="cursor: pointer;"></i></div></a>
+			<div class="pages">
+			<a href=" "><div class="button"><i class="fa-brands fa-microsoft"></i><span> CREACIÓN DE USUARIO</span></div></a>
+			<a href=" "><div class="button"><i class="fa-solid fa-credit-card"></i><span> RESERVAS</span></div></a>
+			<a href=" "><div class="button"><i class="fa-solid fa-user"></i><span> PAGOS</span></div></a>
+			</div>
+			<a onclick="openSidebar()"><div class="profile" id="profile" onclick="openSidebar()"><i class="fa-solid fa-circle-user" style="cursor: pointer;" onclick="openSidebar()"></i></div></a>
+		
+			<div id="dmenu" class="off">
+				<i class="fa-solid fa-xmark" onclick="closeSidebar()"></i>
+				<ul>
+					<li><a href="">MI PERFIL</a></li>
+					<li><a href="">NOTIFICACIONES</a></li>
+					<li><a href="">CONFIGURACIÓN</a></li>
+					<li><a href="">CERRAR SESIÓN</a></li>
+				</ul>
+			</div>
+			
+		</nav>
+	
     </header>
+
+<body>
+  
+	
+<main>
+
 <form id="pasarela-de-pagos">
     <hr>
+	<br>
 <div id="reserva">
     <div id="inicio_reserva">
     <label>INICIO DE RESERVA</label>
@@ -42,8 +73,8 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value1"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $40.000</span>
-        <input id="add-item"class="add-button"value="Añadir"type="button">
-        <input id="remove-item"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item"class="remove-choice"value="ELIMINAR"type="button">
     </div>
     <label id="butterfly-farm"class="title">Mariposario</label>
     <div id="butterflyContainer" class="activity">
@@ -52,8 +83,8 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value2"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $20.000</span>
-        <input id="add-item2"class="add-button"value="Añadir" type="button">
-        <input id="remove-item2"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item2"class="add-button"value="AÑADIR" type="button">
+        <input id="remove-item2"class="remove-choice"value="ELIMINAR"type="button">
     </div>
     <label class="title">Avifauna</label>
     <div id="avifaunaContainer" class="activity">
@@ -62,26 +93,34 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value3"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $60.000</span>
-        <input id="add-item3"class="add-button"value="Añadir"type="button">
-        <input id="remove-item3"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item3"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item3"class="remove-choice"value="ELIMINAR"type="button">
    </div>
 </div>
 <h2 class="titles">Servicios de Hospedaje</h2>
 <div id="lodging-services">
+	<div class="toilet">
     <label for="ul">Baño</label>
+	<br>
     <ul>
+	<br>
     <li>Elementos de aseo personal</li>
     <li>Jacuzzi</li>
     <li>Ducha</li>
     </ul>
-    <label for="ul">Cuarto Hasta 4 personas</label>
+	</div>
+	<div class="room-4">
+    <label for="ul">Cuarto hasta 4 personas</label>
+	<br>
     <ul>
+	<br>
     <li>Dos camas</li>
     <li>Conexión WiFi</li>
     <li>Televisión</li>
     <li>Armario</li>
     <li>Vestidor</li>
     </ul>
+	</div>
 </div>
   <h2 class="titles">Actividades Adicionales</h2>
   <div class="actividades">
@@ -92,8 +131,8 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value4"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $8.000</span>
-        <input id="add-item4"class="add-button"value="Añadir"type="button">
-        <input id="remove-item4"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item4"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item4"class="remove-choice"value="ELIMINAR"type="button">
     </div>
     <label class="title">Cosecha de café</label>
     <div id="coffeeHarvContainer" class="activity">
@@ -102,8 +141,8 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value5"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $15.000</span>
-        <input id="add-item5"class="add-button"value="Añadir"type="button">
-        <input id="remove-item5"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item5"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item5"class="remove-choice"value="ELIMINAR"type="button">
     </div>
     <label class="title">Alimentación de Potros</label>
     <div id="foalFeedContainer" class="activity">
@@ -112,8 +151,8 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value6"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $12.000</span>
-        <input id="add-item6"class="add-button"value="Añadir"type="button">
-        <input id="remove-item6"class="remove-choice"value="Eliminar"type="button">
+        <input id="add-item6"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item6"class="remove-choice"value="ELIMINAR"type="button">
    </div>
    <label class="title">Aguas termales</label>
    <div id="thermalWatContainer" class="activity">
@@ -122,8 +161,8 @@
        <label for="reserve-input">Valor total</label>
        <input id="exit-value7"class="reserve-input"type="text"placeholder="0"readonly>
        <span class="price">Valor: $40.000</span>
-       <input id="add-item7"class="add-button"value="Añadir"type="button">
-       <input id="remove-item7"class="remove-choice"value="Eliminar"type="button">
+       <input id="add-item7"class="add-button"value="AÑADIR"type="button">
+       <input id="remove-item7"class="remove-choice"value="ELIMINAR"type="button">
   </div>
   <label class="title">Pesca</label>
     <div id="fishingContainer" class="activity">
@@ -132,18 +171,22 @@
         <label for="reserve-input">Valor total</label>
         <input id="exit-value8"class="reserve-input"type="text"placeholder="0"readonly>
         <span class="price">Valor: $20.000</span>
-        <input id="add-item8"class="add-button"value="Añadir"type="button">
-        <input id="remove-item8"class="remove-choice"value="Eliminar"type="button">
-  </div>
-  <div>
-    <p id="error-messege"class="mistake">Los campos obligatorios no se han llenado, por favor,, diligencie la información para continuar</p>
+        <input id="add-item8"class="add-button"value="AÑADIR"type="button">
+        <input id="remove-item8"class="remove-choice"value="ELIMINAR"type="button">
+		
+		<div>
+			<p id="error-messege"class="mistake">¡Los campos obligatorios no se han llenado, por favor! Diligencie la información para continuar</p>
+		</div>
+		
   </div>
   </div>
   <div class="button-section">
-    <input id="save-reserve-info" value="Guardar información" type="button">
-    <input id="calculate-reserve-price" value="Calcular total" type="button">
+    <input id="save-reserve-info" class="g-button" value="GUARDAR INFORMACIÓN" type="button">
+    <input id="calculate-reserve-price" class="c-button" value="CALCULAR TOTAL" type="button">
   </div>
+
 </form>
+
 <div id="purchase-info">
     <div id="purchase-content">
         <h2 class="titles">Valor total de la reserva</h2>
@@ -186,12 +229,14 @@
         <div id="totalCost">
         <h2> Valor total: </h2>
         </div>
+		<span class="information">SENA Análisis y Desarrollo de Software</span>
         <img id="close-modal"src="C:\Users\satin\OneDrive\Escritorio\Análisis y desarrollo de software SENA\INTERFACES AGROTOUR CON HTML Y CSS\Pago-en-línea-Kevin-Leiton\x.png" alt="cerrar">
     </div>
-    <footer class="sections">
-        <span class="information">SENA Análisis y Desarrollo de Software</span>
-    </footer>
 </div>
+
+</main>
+
 <script src="online-payment.js"></script>
+
 </body>
 </html>
