@@ -79,7 +79,7 @@ function closeSidebar() {
 }
 
 // Nueva función para renderizar productos
-fetch('../docs/data/productos.json')
+fetch('https://delapazfonseca21.github.io/data/db.json')
 .then((response)=>response.json())
 
 .then((data)=> {
