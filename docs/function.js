@@ -79,59 +79,60 @@ function closeSidebar() {
 }
 
 // Nueva función para renderizar productos
-function renderizarProductos() {
-    const areasImagenes = {
-        destacados: document.querySelector('.imagesarea'),
-        ofertas: document.querySelector('.imagesarea2')
-    };
+fetch('../docs/data/productos.json')
+.then((response)=>response.json())
 
-    // Limpiar contenido existente
-    for (const area in areasImagenes) {
-        areasImagenes[area].innerHTML = '';
+.then((data)=> {
+    for(producto of data){
+        const contenedor = document.getElementById("imagesarea")
+
+        const productoDiv = document.createElement("div")
+        productoDiv.className = "imagebg"
+
+        //crear los elementos que irán dentro del contenedor de producto
+
+        //Destino y precio
+        const info = document.createElement("div")
+        info.className = "info"
+        const destino = document.createElement("div")
+        destino.className = "tipo"
+        destino.id = "destino"
+
+        //se le agrega contenido
+        const tipo = document.createElement("span")
+        tipo.textContent = producto.tipo
+
+        destino.appendChild(tipo)
+        info.appendChild(destino)
+
+        //precio del producto
+        const precio = document.createElement("div")
+        precio.className = "precio"
+        const contenidoPrecio = document.createElement("span")
+        contenidoPrecio.textContent = producto.precio;
+        precio.appendChild(contenidoPrecio)
+
+        info.appendChild(precio)
+
+        //agregando la imagen del producto
+        const imagen = document.createElement("img")
+        imagen.className = "image"
+        imagen.src = producto.imagen
+
+        //Titulo/descripción del producto
+        const description = document.createElement("div")
+        description.className = "h3bg"
+        const contenido = document.createElement("h3")
+        contenido.textContent = producto.titulo;
+        description.appendChild(contenido)
+
+        
+      
+        productoDiv.appendChild(info)
+        productoDiv.appendChild(imagen)
+        productoDiv.appendChild(description)
+
+
+        contenedor.appendChild(productoDiv)
     }
-
-    // Renderizar productos
-    for (const categoria in productosHome) {
-        productosHome[categoria].forEach(producto => {
-            const productoHTML = crearElementoProducto(producto);
-            areasImagenes[categoria].appendChild(productoHTML);
-        });
-    }
-}
-
-function crearElementoProducto(producto) {
-    const imagebg = document.createElement('div');
-    imagebg.className = 'imagebg';
-
-    imagebg.innerHTML = `
-        <div class="info">
-            <div class="tipo" id="${producto.tipo.toLowerCase()}"><strong><span>${producto.tipo}</span></strong></div>
-            <div class="precio${producto.oferta ? ' oferta' : ''}">
-                <i class="fa-solid fa-dollar-sign"></i><strong><span> ${producto.precio.toLocaleString()}</span></strong>
-            </div>
-        </div>
-        <img src="${producto.imagen}" class="image" alt="${producto.titulo}">
-        <div class="h3bg"><h3>${producto.titulo}</h3></div>
-        <div class="info2">
-            <div class="stars" style="cursor: pointer;">
-                <a href=" ">
-                    ${generarEstrellas(producto.estrellas)}
-                    <strong><span class="reseña">RESEÑAS</span></strong>
-                </a>
-            </div>
-            <a href=" "><div class="mas"><strong><h3 style="cursor: pointer; color:white;">SABER MÁS</h3></strong></div></a>
-            <a href=" "><div class="dots" style="cursor: pointer; color:white;"><i class="fa-solid fa-share-nodes"></i></div></a>
-        </div>
-    `;
-
-    return imagebg;
-}
-
-function generarEstrellas(cantidad) {
-    return Array(5).fill('').map((_, index) => 
-        `<span>${index < cantidad ? '★' : '☆'}</span>`
-    ).join('');
-}
-
-// Inicializar la página
-document.addEventListener('DOMContentLoaded', renderizarProductos);
+})

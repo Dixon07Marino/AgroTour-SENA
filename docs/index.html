@@ -1,99 +1,103 @@
-<head> <!-- V.2.10 -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home DAC</title>
-	<link rel="icon" href="logo-del-sena-verde.jpg">
-	<link rel="stylesheet" href="recstyles.css">
-	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&display=swap"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html>
+<html lang="es-CO">
+	<head> <!-- V.2.10 -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="./images/logo-del-sena-verde.jpg">
+		<script src="./function.js" defer></script>
+		<!--<script src="./prueba.js"></script>-->
 
-
-</head>
-
-<header>
-
-	<nav class="navmenu">
-
-		<a href=" ">
-			<div class="home"><i class="fa-solid fa-house" style="cursor: pointer;"></i></div>
-		</a>
-		<div class="pages">
-			<a href=" ">
-				<div class="button"><i class="fa-brands fa-microsoft"></i><span> CREACIÓN DE USUARIO</span></div>
+		<title>Inicio</title>
+	
+		<!--Un poco de bibliotecas y cosas raras que sabrá la virgen maría que son-->
+		<link rel="stylesheet" href="recstyles.css">
+		<link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&display=swap"
+			rel="stylesheet">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	
+	</head>
+	
+	<header>
+	
+		<nav class="navmenu">
+	
+			
+			<div class="pages">
+				<a href="./Login/index.html">
+					<div class="button"><i class="fa-brands fa-microsoft"></i><span>Creación de Usuario</span></div>
+				</a>
+	
+				<a href="./reserve/reserva.html">
+					<div class="button"><i class="fa-solid fa-credit-card"></i><span>Reservas</span></div>
+				</a>
+	
+			</div>
+			<a onclick="openSidebar()">
+				<div class="profile" id="profile" onclick="openSidebar()"><i class="fa-solid fa-circle-user"
+						style="cursor: pointer;" onclick="openSidebar()"></i></div>
 			</a>
-			<a href=" ">
-				<div class="button"><i class="fa-solid fa-credit-card"></i><span> RESERVAS</span></div>
-			</a>
-			<a href=" ">
-				<div class="button"><i class="fa-solid fa-user"></i><span> PAGOS</span></div>
-			</a>
+	
+			<div id="dmenu" class="off">
+				<i class="fa-solid fa-xmark" onclick="closeSidebar()"></i>
+				<ul>
+					<li><a href="">MI PERFIL</a></li>
+					<li><a href="">NOTIFICACIONES</a></li>
+					<li><a href="">CONFIGURACIÓN</a></li>
+					<li><a href="">CERRAR SESIÓN</a></li>
+				</ul>
+			</div>
+	
+		</nav>
+	
+	</header>
+	
+	<body>
+		<div class="titles">
+			<h2 class="title1">Recomendaciones</h2><br>
 		</div>
-		<a onclick="openSidebar()">
-			<div class="profile" id="profile" onclick="openSidebar()"><i class="fa-solid fa-circle-user"
-					style="cursor: pointer;" onclick="openSidebar()"></i></div>
-		</a>
+		  
+		<div class="imagescontainer">
+			<div class="flecha-l" id="left-arrow"><i class="fa-solid fa-chevron-left"></i></div>
+				<div class="imagesarea" id="imagesarea">
+					
 
-		<div id="dmenu" class="off">
-			<i class="fa-solid fa-xmark" onclick="closeSidebar()"></i>
-			<ul>
-				<li><a href="">MI PERFIL</a></li>
-				<li><a href="">NOTIFICACIONES</a></li>
-				<li><a href="">CONFIGURACIÓN</a></li>
-				<li><a href="">CERRAR SESIÓN</a></li>
-			</ul>
+				</div>
+			<div class="flecha-r" id="right-arrow"><i class="fa-solid fa-chevron-right"></i></div>
 		</div>
-
-	</nav>
-
-</header>
-
-<body>
-	<div class="titles">
-		<h2 class="title1">¡PUEDE INTERESARTE!</h2><br>
-	  </div>
-	  
-	  <div class="imagescontainer">
-		<div class="flecha-l" id="left-arrow"><i class="fa-solid fa-chevron-left"></i></div>
-		<div class="imagesarea" id="imagesarea">
-		  <!-- Contenido dinámico -->
+		  
+		<div class="titles"><strong><h2 class="title2">¡EN OFERTA!</h2></strong></div>
+		  
+		<div class="imagescontainer">
+			<div class="flecha-l" id="left-arrow2"><i class="fa-solid fa-chevron-left"></i></div>
+			<div class="imagesarea2" id="imagesarea">
+			<!-- Contenido dinámico -->
+			</div>
+			<div class="flecha-r" id="right-arrow2"><i class="fa-solid fa-chevron-right"></i></div>
 		</div>
-		<div class="flecha-r" id="right-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-	  </div>
-	  
-	  <div class="titles"><strong><h2 class="title2">¡EN OFERTA!</h2></strong></div>
-	  
-	  <div class="imagescontainer">
-		<div class="flecha-l" id="left-arrow2"><i class="fa-solid fa-chevron-left"></i></div>
-		<div class="imagesarea2" id="imagesarea">
-		  <!-- Contenido dinámico -->
-		</div>
-		<div class="flecha-r" id="right-arrow2"><i class="fa-solid fa-chevron-right"></i></div>
-	  </div>
-	  
-	  <!-- Scripts -->
-	  <script src="productos.js"></script>
-	  <script src="function.js" defer></script>
-</body>
-<footer>
-	<br>
-	<div class="contactanos">
-		<h3>Contáctanos</h3>
-	</div>
-	<br>
-	<div class="social-media">
-		<i class="fa-brands fa-whatsapp" id="wapp"></i>
-		<i class="fa-brands fa-instagram" id="ig"></i>
-		<i class="fa-brands fa-facebook" id="face"></i>
-		<i class="fa-brands fa-twitter" id="twit"></i>
-	</div>
-	<br>
-	<div class="credits">
-		<h3>Copyright ©2024: Designed by DAC Software Team</h3>
-	</div>
-</footer>
+	
+		<footer>
+			<br>
+			<div class="contactanos">
+				<h3>Contáctanos</h3>
+			</div>
+			<br>
+			<div class="social-media">
+				<i class="fa-brands fa-whatsapp" id="wapp"></i>
+				<i class="fa-brands fa-instagram" id="ig"></i>
+				<i class="fa-brands fa-facebook" id="face"></i>
+				<i class="fa-brands fa-twitter" id="twit"></i>
+			</div>
+			<br>
+			<div class="credits">
+				<h3>Copyright ©2024: Designed by DAC Software Team</h3>
+			</div>
+		</footer>
+	</body>
+	
+</html>
