@@ -80,59 +80,61 @@ function closeSidebar() {
 
 // Nueva función para renderizar productos
 fetch('https://delapazfonseca21.github.io/data/db.json')
-.then((response)=>response.json())
+.then((response) => response.json())
+.then((data) => {
+    const recomendaciones = data.filter(producto => !producto.oferta);
+    const ofertas = data.filter(producto => producto.oferta);
 
-.then((data)=> {
-    for(producto of data){
-        const contenedor = document.getElementById("imagesarea")
+    renderProductos(recomendaciones, 'imagesarea-recomendaciones');
+    renderProductos(ofertas, 'imagesarea-ofertas');
+});
 
-        const productoDiv = document.createElement("div")
-        productoDiv.className = "imagebg"
+function renderProductos(productos, contenedorId) {
+    const contenedor = document.getElementById(contenedorId);
 
-        //crear los elementos que irán dentro del contenedor de producto
+    productos.forEach(producto => {
+        const productoDiv = document.createElement("div");
+        productoDiv.className = "imagebg";
 
-        //Destino y precio
-        const info = document.createElement("div")
-        info.className = "info"
-        const destino = document.createElement("div")
-        destino.className = "tipo"
-        destino.id = "destino"
+        // Crear los elementos que irán dentro del contenedor de producto
 
-        //se le agrega contenido
-        const tipo = document.createElement("span")
-        tipo.textContent = producto.tipo
+        // Destino y precio
+        const info = document.createElement("div");
+        info.className = "info";
+        const destino = document.createElement("div");
+        destino.className = "tipo";
+        destino.id = "destino";
 
-        destino.appendChild(tipo)
-        info.appendChild(destino)
+        // Se le agrega contenido
+        const tipo = document.createElement("span");
+        tipo.textContent = producto.tipo;
+        destino.appendChild(tipo);
+        info.appendChild(destino);
 
-        //precio del producto
-        const precio = document.createElement("div")
-        precio.className = "precio"
-        const contenidoPrecio = document.createElement("span")
-        contenidoPrecio.textContent = producto.precio;
-        precio.appendChild(contenidoPrecio)
+        // Precio del producto
+        const precio = document.createElement("div");
+        precio.className = "precio";
+        const contenidoPrecio = document.createElement("span");
+        contenidoPrecio.textContent = `$${producto.precio}`;
+        precio.appendChild(contenidoPrecio);
+        info.appendChild(precio);
 
-        info.appendChild(precio)
+        // Agregando la imagen del producto
+        const imagen = document.createElement("img");
+        imagen.className = "image";
+        imagen.src = producto.imagen;
 
-        //agregando la imagen del producto
-        const imagen = document.createElement("img")
-        imagen.className = "image"
-        imagen.src = producto.imagen
-
-        //Titulo/descripción del producto
-        const description = document.createElement("div")
-        description.className = "h3bg"
-        const contenido = document.createElement("h3")
+        // Título/descripción del producto
+        const description = document.createElement("div");
+        description.className = "h3bg";
+        const contenido = document.createElement("h3");
         contenido.textContent = producto.titulo;
-        description.appendChild(contenido)
+        description.appendChild(contenido);
 
-        
-      
-        productoDiv.appendChild(info)
-        productoDiv.appendChild(imagen)
-        productoDiv.appendChild(description)
+        productoDiv.appendChild(info);
+        productoDiv.appendChild(imagen);
+        productoDiv.appendChild(description);
 
-
-        contenedor.appendChild(productoDiv)
-    }
-})
+        contenedor.appendChild(productoDiv);
+    });
+}
