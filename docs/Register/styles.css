@@ -99,7 +99,7 @@ label {
 }
 
 .bg {
-	background-image: url('login-register-bg.jpg');
+	background-image: url('../images/login/login-register-bg.jpg');
 	height: 100vh;
 	background-size: cover; 
 	width: 100%;					
