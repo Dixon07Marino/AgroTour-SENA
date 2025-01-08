@@ -1,5 +1,5 @@
 // GUARDAR DATOS //
-function mostrar() {
+/* function mostrar() {
     const user = document.getElementById("user").value;
 	const email = document.getElementById("email").value;
     const password = document.getElementById("pass").value;
@@ -7,23 +7,47 @@ function mostrar() {
     alert(`Tu informacion es: 
 	Usuario: ${user} 
 	Correo: ${email}
-	Contraseña: ${password}`);
-}
+	Contraseña: ${password}
+    Confirmación contraseña: ${password2}
+    `);
+} */
 
 function togglePasswords() {
-            // Seleccionar todos los inputs de contraseña
             const passwords = document.querySelectorAll('.pass');
             const isPassword = passwords[0].type === 'password';
 
-            // Cambiar el tipo de los inputs
             passwords.forEach(input => {
                 input.type = isPassword ? 'text' : 'password';
             });
 
-            // Cambiar los íconos asociados a las contraseñas
             const passwordIcons = document.querySelectorAll('.password-icon');
             passwordIcons.forEach(icon => {
                 icon.classList.toggle('fa-eye');
                 icon.classList.toggle('fa-eye-slash');
             });
         }
+
+function samePasswords () {
+    var pass = document.getElementById("pass").value;
+    var pass2 = document.getElementById("pass2").value;
+
+    if (pass !== pass2) {
+        alert("Las contraseñas no coinciden. Verifica que ambas sean las mismas.");
+        return false;
+    }
+
+        const user = document.getElementById("user").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("pass").value;
+        const password2 = document.getElementById("pass2").value;
+        alert(`Tu informacion es: 
+        Usuario: ${user} 
+        Correo: ${email}
+        Contraseña: ${password}
+        Confirmación contraseña: ${password2}
+        `);
+
+    window.location.href = "../Login/index.html";
+    return false;
+}
+

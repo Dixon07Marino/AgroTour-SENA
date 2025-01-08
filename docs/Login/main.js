@@ -1,12 +1,4 @@
 // GUARDAR DATOS //
-function mostrar() {
-    const email = document.getElementById("user").value;
-    const password = document.getElementById("pass").value;
-    const check = document.getElementById("check").value;
-    alert(`Tu informacion es: 
-	Usuario / Correo: ${email}
-	Contraseña: ${password}`);
-}
 
 function togglePasswords() {
             // Seleccionar todos los inputs de contraseña
@@ -25,3 +17,17 @@ function togglePasswords() {
                 icon.classList.toggle('fa-eye-slash');
             });
         }
+
+function goHome(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("user").value;
+    const password = document.getElementById("pass").value;
+    const check = document.getElementById("check").value;
+    alert(`Tu informacion es: 
+	Usuario / Correo: ${email}
+	Contraseña: ${password}
+    Recordarme la próxima: ${check}`);
+
+    window.location.href = "../index.html";
+    }
