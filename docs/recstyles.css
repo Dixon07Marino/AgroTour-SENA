@@ -42,26 +42,8 @@ span {
 	color: white;
 	position: relative;
 }
-/*
-.home::after {
-	content: '';
-	background: linear-gradient(to right, rgb(174, 215, 159), white);
-	height: 5px;
-	width: 0px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	border-radius: 100px;
-	transition: 0.7s ease;
-} 
-
-.home:hover::after {
-	width: 100%;
-	transform: scale (1.1);
-} */
 
 .home:hover {
-	/* background: rgb(174, 215, 159); */
 	background: rgb(9, 71, 4);
 	color: rgb(174, 215, 159);
 }
@@ -125,23 +107,7 @@ span {
 	transition: 0.5s;
 	position: relative;
 }
-/*
-.profile::after {
-	content: '';
-	background: linear-gradient(to right, rgb(174, 215, 159), white);
-	height: 5px;
-	width: 0px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	border-radius: 100px;
-	transition: 0.7s ease;
-} 
 
-.profile:hover::after {
-	width: 100%;
-	transform: scale (1.1);
-} */
 
 .profile:hover {
 	background: rgb(9, 71, 4);
@@ -440,6 +406,7 @@ img {
 }
 
 .h3bg {
+	cursor: pointer;
 	background: rgb(174, 215, 159);
 	justify-content: center;
 	align-items: center;

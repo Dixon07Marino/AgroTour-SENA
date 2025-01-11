@@ -13,19 +13,19 @@
 } */
 
 function togglePasswords() {
-            const passwords = document.querySelectorAll('.pass');
-            const isPassword = passwords[0].type === 'password';
+    const passwords = document.querySelectorAll('.pass');
+    const isPassword = passwords[0].type === 'password';
 
-            passwords.forEach(input => {
-                input.type = isPassword ? 'text' : 'password';
-            });
+    passwords.forEach(input => {
+        input.type = isPassword ? 'text' : 'password';
+    });
 
-            const passwordIcons = document.querySelectorAll('.password-icon');
-            passwordIcons.forEach(icon => {
-                icon.classList.toggle('fa-eye');
-                icon.classList.toggle('fa-eye-slash');
-            });
-        }
+    const passwordIcons = document.querySelectorAll('.password-icon');
+    passwordIcons.forEach(icon => {
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+    });
+}
 
 function samePasswords () {
     var pass = document.getElementById("pass").value;

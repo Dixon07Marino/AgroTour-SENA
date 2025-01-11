@@ -80,14 +80,14 @@ function closeSidebar() {
 
 // Nueva función para renderizar productos
 fetch('https://delapazfonseca21.github.io/data/db.json')
-.then((response) => response.json())
-.then((data) => {
-    const recomendaciones = data.filter(producto => !producto.oferta);
-    const ofertas = data.filter(producto => producto.oferta);
+.then(response => response.json())
 
-    renderProductos(recomendaciones, 'imagesarea-recomendaciones');
-    renderProductos(ofertas, 'imagesarea-ofertas');
-});
+.then(data => renderProductos(data, 'imagesarea-recomendaciones'));
+
+//renderizar productos en ofertas
+fetch("https://delapazfonseca21.github.io/data2/ofertas.json")
+.then(response => response.json())
+.then(data2 => renderProductos(data2, 'imagesarea-ofertas'));
 
 function renderProductos(productos, contenedorId) {
     const contenedor = document.getElementById(contenedorId);
