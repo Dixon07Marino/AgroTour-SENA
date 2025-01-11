@@ -4,3 +4,5 @@ AgroTour es un proyecto académico del programa de formación en Análisis y Des
 Características del Proyecto
 -Reservas en línea de paquetes turísticos.
 -Información detallada de cada paquete.
+
+![image](https://github.com/user-attachments/assets/a27e1270-f5b8-4627-b212-79624226b8ca)
