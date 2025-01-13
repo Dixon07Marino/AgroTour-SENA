@@ -29,5 +29,5 @@ function goHome(event) {
 	Contraseña: ${password}
     Recordarme la próxima: ${check}`);
 
-    window.location.href = "../index.html";
+    window.location.href = "pages/home/index.html";
     }
