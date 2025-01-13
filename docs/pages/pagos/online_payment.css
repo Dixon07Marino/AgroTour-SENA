@@ -364,7 +364,7 @@ input[type="number"]{
 	gap: 1rem;
     justify-content: center;
     align-content: center;
-	align-tiems: center;
+	align-items: center;
     padding: 3px;
     margin-top: 10px;
 }
@@ -435,7 +435,6 @@ input[type="number"]{
     transform:none;
     transition:0.23s;
 	align-self: center;
-	width: 100&;
 }
 
 .add-button{

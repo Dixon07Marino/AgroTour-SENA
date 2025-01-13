@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CO">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
     <title>Registrarse</title>
-    <link rel="icon" href=" ">
+    <link rel="icon" href="/public/images/logo-del-sena-verde.jpg">
     <link rel="stylesheet" href="styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,6 @@
 </head>
 
 <body>
-	
-	
 	<main class="bg">
 		<div class="container-r">
 			
@@ -22,7 +20,12 @@
 			<div class="title"><h3>REGISTRARSE</h3></div>
 				<div class="info">
 					<div class="inputcont">
-					<div class="input"><input type="text" class="user" id="user" placeholder="Nombre de usuario" required autocomplete="off"> <i class="fa-solid fa-user"></i></div>
+
+					<div class="input">
+						<input type="text" class="user" id="user" placeholder="Nombre de usuario" required autocomplete="off">
+						<i class="fa-solid fa-user"></i>
+					</div>
+					
 					<div class="input"><input type="email" class="email" id="email" placeholder="Correo electrónico" required autocomplete="off"> <i class="fa-solid fa-envelope" id="email" ></i></div>
 					<div class="input"><input type="password" class="pass" id="pass" placeholder="Contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i></div>
 					<div class="input"><input type="password" class="pass" id="pass2" placeholder="Repetir contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon2" onclick="togglePasswords()"></i></div>
@@ -32,7 +35,7 @@
 					<button type="submit" class="enviar">REGISTRARME</button>
 				<div class="text">
 					<h3>¿Ya tienes cuenta?</h3>
-					<a href="../Login/index.html">Iniciar sesión</a>
+					<a href="/docs/pages/index.html">Iniciar sesión</a>
 				</div>
 			</form>
 		</div>
