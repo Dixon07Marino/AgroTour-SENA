@@ -1,0 +1,608 @@
+* { /* V2.10 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+	background-color: rgb(230, 240, 227);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+span {
+	font-size: 15.5px;
+}
+
+/* SECCION DEL NAV */
+ 
+.navmenu {
+	font-size: 1.6rem;
+	display: inline-flex;
+	background-color: #239A14;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	gap: 6rem;
+	height: 5rem;
+	padding: 2rem;
+	position: relative;
+}
+
+.navmenu span {
+	font-size: 1.6rem;
+}
+
+.home {
+	font-size: 2.2rem;
+	border-radius: 0.5rem;
+	transition: 0.7s;
+	padding: 0.6rem;
+	position: relative;
+	transition: 0.7s;
+	color: white;
+	position: relative;
+}
+
+.home:hover {
+	background: rgb(9, 71, 4);
+	color: rgb(174, 215, 159);
+}
+
+.pages {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	height: 5rem;
+	align-content: center;
+}
+
+.button {
+	background: transparent;
+	padding: 0.6rem;
+	gap: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 4rem;
+	border-radius: 0.5rem;
+	transition: 0.7s;
+}
+
+.button:hover {
+	background: rgb(9, 71, 4);
+	cursor: pointer;
+	color: rgb(174, 215, 159);
+}
+
+.button::after {
+	content: '';
+	background: linear-gradient(to right, rgb(174, 215, 159), rgb(174, 215, 159), white);
+	height: 0.5rem;
+	width: 0rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 10rem;
+	transition: 0.7s ease;
+} 
+
+.button:hover::after {
+	width: 100%;
+	transform: scale (1.1);
+} 
+
+.pages a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.8rem;
+}
+
+.profile {
+	font-size: 3rem;
+	color: white;
+	padding: 0.6rem;
+	border-radius: 0.5rem;
+	transition: 0.5s;
+	position: relative;
+    font-family: Arial , sans-serif;
+}
+
+.profile:hover {
+	background: rgb(9, 71, 4);
+	color: rgb(174, 215, 159);
+}
+
+#dmenu {
+	position: absolute;
+	display: flex;
+	right: 0;
+	top: 0%;
+	flex-direction: column;
+	background: #239A14;
+	border-radius: 0.5rem;
+	transition: 0.5s ease-out;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+}
+
+.off {
+	opacity: 0;
+	z-index: -1;
+}
+
+.on {
+	opacity: 1;
+	z-index: 5;
+}
+
+
+#dmenu i {
+	color: white;
+	font-weight: 600;
+	font-size: 1.7rem;
+	padding-left: 0.4rem;
+	margin-right: 0.5rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.2rem;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+#dmenu ul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#dmenu li {
+	font-size: 1.5rem;
+	list-style: none;
+	color: white;
+	width: 100%;
+	padding: 0.5rem;
+	transition: 0.5s ease;
+	text-align: center;
+}
+
+#dmenu a {
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	transition: 0.5s ease;
+	height: 100%;
+	font-weight: 600;
+}
+
+#x-icon {
+	width: 100%;
+}
+
+#dmenu li:hover, #dmenu #x-icon:hover {
+	background: rgb(9, 71, 4);
+}
+/* FIN DE SCCION DE NAV */
+
+/* SECCION DE TIPOS */
+img {
+	height: 200 px;
+	width: 200px;
+}
+
+.stars a {
+	text-decoration: none;
+	color: gold;
+}
+
+.titles {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 7px;
+	padding: 7px;
+	transition: 0.3s;
+	background: #239A14;
+	position: relative;
+	z-index: -1;
+}
+
+.title1, .title2 {
+	background: #239A14;
+	color: white;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.title1::after, .title1::before, .title2::after, .title2::before{
+	content: '';
+	border-radius: 20px;
+	background-image: conic-gradient(white, rgb(27, 179, 80), white, rgb(27, 179, 80), white);
+	border: 7px solid rgb(230, 240, 227);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	z-index: -1;
+	padding: 5px;
+}
+
+.imagescontainer {
+	display: flex;
+	gap: 5px;
+    justify-content: center;
+	align-items: center;
+	background: rgb(174, 215, 159);
+	scroll-behavior: smooth;
+	height: 475px;
+	border-radius: 60px;
+}
+
+.imagesarea, .imagesarea2 {
+	display: flex;
+	padding: 10; 
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	background: rgb(174, 215, 159);
+	overflow: hidden;
+	width: 92.45%;
+	height: 100%;
+	transition: transform 0.6s ease;
+}
+
+.flecha-l {
+	margin-left: -7px;
+	padding-left: 3px;
+	background: rgb(27, 179, 80);
+	color: rgb(9, 71, 4); 
+	font-size: 40px;
+	transition: 0.3s ease;
+	border: 4px solid rgb(27, 179, 80);
+	border-radius: 5px;
+	margin-right: -2px;
+}
+
+.flecha-l:hover {
+	background: white;
+	transform: scale(1.1);
+	cursor: pointer;
+	border: 4px solid white;
+	color: rgb(27, 179, 80);
+}
+
+.flecha-r {
+	margin-right: -7px;
+	padding-right: 3px;
+	background: rgb(27, 179, 80);
+	color: rgb(9, 71, 4); 
+	font-size: 40px;
+	transition: 0.3s ease;
+	border: 4px solid rgb(27, 179, 80);
+	border-radius: 5px;
+}
+
+.flecha-r:hover {
+	background: white;
+	transform: scale(1.1);
+	cursor: pointer;
+	border: 4px solid white;
+	color: rgb(27, 179, 80);
+}
+
+.info {
+	display: flex;
+	gap: 100px;
+}
+
+.tipo {
+	min-width: 100px;
+	padding: 5px;
+	margin-top: -45px;
+	margin-bottom: 15px;
+	margin-left: -12px;
+	padding-bottom: -10px;
+	color: white;
+	border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+	border: 2px solid #1E3920;
+	height: 35px;
+	
+}
+
+#destino {
+	background: rgb(0, 176, 240);
+}
+
+#paquete {
+	background: rgb(27, 179, 80);
+}
+
+.precio {
+	background-color: yellow;
+	padding: 5px;
+	margin-top: -45px;
+	margin-bottom: 15px;
+	min-width: 100px;
+	padding-bottom: -10px;
+	color: #614003;
+	border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+	border: 2px solid #1E3920;
+	height: 35px;
+}
+
+.precio i {
+	color: #614003;
+}
+
+#oferta {
+	background: red;
+	color: white;
+}
+
+#oferta i {
+	color: white;
+}
+
+.imagebg {
+    background: rgb(35, 154, 20);
+    padding: 10px;
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px; 
+    box-shadow: 0px 7px 1px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 300px;
+	height: 330px;
+	padding-bottom: 40px;
+	border: 2px solid #1E3920;
+	transition: transform 0.3s;
+	flex: 0 0 auto;
+	margin: 0;     /* Elimina márgenes extra */
+}
+
+.imagebg:hover {
+	transform: scale(1.03);
+	margin-top: -100px;
+	margin-bottom: -100px;
+	height: 380px;
+	border: 2px solid white;
+	/* background: rgb(174, 215, 159); */
+}
+
+.imagebg:hover .image{
+	height: 67%
+}
+
+.imagebg:hover .tipo{
+	border: 2px solid white;
+}
+
+.imagebg:hover .precio{
+	border: 2px solid white;
+}
+
+.imagebg:hover .h3bg{
+	height: 90px;
+	/* color: rgb(174, 215, 159);
+	background: rgb(35, 154, 20); */
+}
+
+.image {
+	flex-grow: 1;
+	height: 75%;
+	width: 95%;
+    max-width: 100%; 
+	border: 3px solid rgb(174, 215, 159);
+	margin-bottom: 5px;
+	margin-top: 0px;
+
+}
+
+.h3bg {
+	cursor: pointer;
+	background: rgb(174, 215, 159);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: grid;
+	margin-bottom: 5px;
+	overflow: hidden;
+	height: 46px;
+	border-radius: 5px;
+	color: rgb(9, 71, 4);
+	padding: 3px;
+	font-size: 12.6px;
+	/* padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 8px;
+	margin-left: 8px;    Ajusta el nombre a la anchura de la imagens*/
+}
+
+.info2 {
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin-top: 6px;
+}
+
+.reseña {
+	font-size: 14.5px;
+	position: absolute;
+	top: 13%;
+	left: 15.7%;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	color: gold;
+}
+
+.stars {
+	color: gold;
+	background: rgb(9, 71, 4);
+	/* margin-top: 10px;
+	margin-right: 60%;
+	margin-left: 75px;
+	margin-right: 75px;
+	padding-bottom: 2px; */
+	border: 2px solid rgb(174, 215, 159);
+	/* padding-right: 5px;
+	padding-left: 5px; */
+	height: 30px;
+	width: 110px;
+	/* */
+	display: inline-block;
+	position: relative;
+	transition: opacity 0.1s;
+	transition: 0.2s;
+	font-size: 10px;
+}
+
+.stars:hover {
+	background: rgb(27, 179, 80);
+	transform: scale(1.1);
+}
+.stars:hover span{
+	opacity: 0;
+}
+
+.stars:hover .reseña {
+	opacity: 1;
+}
+
+.mas {
+	border: 2px solid rgb(174, 215, 159);
+	background: rgb(9, 71, 4);
+	color: white;
+	width: 129px;
+	font-size: 12.5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 1px; 
+	text-align: center;
+	display: flex;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	transition: 0.2s ease;
+}
+
+.info2 a {
+	text-decoration: none;
+}
+
+.mas:hover {
+	transform: scale(1.1);
+	background: rgb(27, 179, 80);
+	font-size: 13.5px;
+}
+
+.dots {
+	background: rgb(9, 71, 4);
+	border: 2px solid rgb(174, 215, 159);
+	width: 30px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.dots i {
+	color: white;
+	font-size: 17px;
+	padding-top: 0.5px;
+}
+
+.dots:hover {
+	cursor: pointer;
+	background: rgb(27, 179, 80);
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	height: auto;
+	background: #239A14;
+}
+
+.contactanos {
+	font-size: 1.2rem;
+}
+
+.social-media {
+	display: flex;
+	font-size: 1.6rem;
+	gap: 1rem;
+	text-align: center;
+}
+
+.social-media i {
+	font-weight: 500;
+	color: #239A14;
+	background: white;
+	padding: 0.7rem;
+	border-radius: 50%;
+	transition: 0.5s ease-out;
+	width: 2.9rem;
+}
+
+ .social-media i:hover {
+	transform: scale(1.1);
+} 
+
+#wapp:hover {
+	background: #35db72;
+	color: white;
+}
+
+#ig {
+	background: linear-gradient(60deg, white, white, white, white, white);
+}
+
+#ig:hover {
+	background: linear-gradient(60deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+	color: white;
+}
+
+#face:hover {
+	background: #3b5998;
+	color: white;
+}
+
+#twit:hover {
+	background: #00acee;
+	color: white;
+}
+
+.credits {
+	text-align: center;
+	width: 100%;
+	background: rgb(9, 71, 4);
+	padding: 0.6rem;
+	font-size: 12.6px;
+	font-weight: 100;
+}
+
+.contactanos {
+	font-size: 18px;
+}

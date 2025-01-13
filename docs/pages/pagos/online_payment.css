@@ -8,7 +8,10 @@ body {
     background: rgb(230, 240, 227);
     color:rgb(5, 49, 1);
     font-family: "Poppins", sans-serif;
-    font-size: 10px;
+}
+
+html {
+	font-size: 62.5%;
 }
 
 form {
@@ -27,55 +30,36 @@ span {
 }
 
 /* SECCION DEL NAV */
-
+ 
 .navmenu {
-	font-size: 16px;
+	font-size: 1.6rem;
 	display: inline-flex;
 	background-color: #239A14;
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-	gap: 60px;
-	height: 50px;
-	padding: 20px;
+	gap: 6rem;
+	height: 5rem;
+	padding: 2rem;
 	position: relative;
 }
 
 .navmenu span {
-	font-size: 16.5px;
+	font-size: 1.6rem;
 }
 
 .home {
-	font-size: 22px;
-	border-radius: 5px;
+	font-size: 2.2rem;
+	border-radius: 0.5rem;
 	transition: 0.7s;
-	padding-left: 6.5px;
-	padding-right: 6.5px;
+	padding: 0.6rem;
 	position: relative;
 	transition: 0.7s;
 	color: white;
 	position: relative;
 }
-/*
-.home::after {
-	content: '';
-	background: linear-gradient(to right, rgb(174, 215, 159), white);
-	height: 5px;
-	width: 0px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	border-radius: 100px;
-	transition: 0.7s ease;
-} 
-
-.home:hover::after {
-	width: 100%;
-	transform: scale (1.1);
-} */
 
 .home:hover {
-	/* background: rgb(174, 215, 159); */
 	background: rgb(9, 71, 4);
 	color: rgb(174, 215, 159);
 }
@@ -84,21 +68,21 @@ span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
-	height: 50px;
+	gap: 1rem;
+	height: 5rem;
 	align-content: center;
 }
 
 .button {
 	background: transparent;
-	padding: 6px;
-	gap: 5px;
+	padding: 0.6rem;
+	gap: 0.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	height: 40px;
-	border-radius: 5px;
+	height: 4rem;
+	border-radius: 0.5rem;
 	transition: 0.7s;
 }
 
@@ -111,12 +95,12 @@ span {
 .button::after {
 	content: '';
 	background: linear-gradient(to right, rgb(174, 215, 159), rgb(174, 215, 159), white);
-	height: 5px;
-	width: 0px;
+	height: 0.5rem;
+	width: 0rem;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	border-radius: 100px;
+	border-radius: 10rem;
 	transition: 0.7s ease;
 } 
 
@@ -128,39 +112,18 @@ span {
 .pages a {
 	text-decoration: none;
 	color: white;
-	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 .profile {
-	font-size: 30px;
+	font-size: 2.8rem;
 	color: white;
-	border-radius: 5px;
+	padding: 0.6rem;
+	border-radius: 0.5rem;
 	transition: 0.5s;
 	position: relative;
-	padding-left: 6.5px;
-	padding-right: 6.5px;
-	height: 42px;
-	display: flex;
-	align-items: center;
+    font-family: Arial , sans-serif;
 }
-
-/*
-.profile::after {
-	content: '';
-	background: linear-gradient(to right, rgb(174, 215, 159), white);
-	height: 5px;
-	width: 0px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	border-radius: 100px;
-	transition: 0.7s ease;
-} 
-
-.profile:hover::after {
-	width: 100%;
-	transform: scale (1.1);
-} */
 
 .profile:hover {
 	background: rgb(9, 71, 4);
@@ -170,7 +133,7 @@ span {
 #dmenu {
 	position: absolute;
 	display: flex;
-	left: 88.7%;
+	right: 0;
 	top: 0%;
 	flex-direction: column;
 	background: #239A14;
@@ -193,11 +156,11 @@ span {
 #dmenu i {
 	color: white;
 	font-weight: 600;
-	font-size: 1.6rem;
+	font-size: 1.7rem;
 	padding-left: 0.4rem;
+	margin-right: 0.5rem;
 	padding-top: 0.3rem;
 	padding-bottom: 0.2rem;
-	/* width: 21%; */
 	cursor: pointer;
 	transition: 0.5s ease;
 }
@@ -209,7 +172,7 @@ span {
 }
 
 #dmenu li {
-	font-size: 1rem;
+	font-size: 1.5rem;
 	list-style: none;
 	color: white;
 	width: 100%;
@@ -227,9 +190,14 @@ span {
 	font-weight: 600;
 }
 
-#dmenu li:hover, #dmenu i:hover {
+#x-icon {
+	width: 100%;
+}
+
+#dmenu li:hover, #dmenu #x-icon:hover {
 	background: rgb(9, 71, 4);
 }
+/* FIN DE SECCION DE NAV */
 
 input{
     background-color:rgb(229, 237, 219);

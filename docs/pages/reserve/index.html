@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    
+    <!-- Links de recursos sobre fuentes e iconos-->
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<header>
+
+	<nav class="navmenu">
+
+		<a href="../home/index.html"><div class="home"><i class="fa-solid fa-house"></i></div></a>
+
+		<div class="pages">
+
+			<a href="../pagos/onlinepay.html">
+				<div class="button"><i class="fa-solid fa-credit-card"></i><span>Pagos</span></div>
+			</a>
+
+		</div>
+		<a onclick="openSidebar()">
+			<div class="profile" id="profile" onclick="openSidebar()"><i class="fa-solid fa-circle-user"
+					style="cursor: pointer;" onclick="openSidebar()"></i></div>
+		</a>
+
+		<div id="dmenu" class="off">
+			<i id="x-icon" class="fa-solid fa-xmark" style="font-size: 2.4rem;" onclick="closeSidebar()"></i>
+			<ul>
+				<li onclick="alert('Opción no disponible de momento!')"><i class="fa-solid fa-user"></i><a href="">Mi Perfil</a></li>
+				<li><i class="fa-solid fa-right-from-bracket"></i><a href="../../index.html">Cerrar sesión</a></li>
+			</ul>
+		</div>
+
+	</nav>
+
+</header>
+
+<body>
+    <main>
+        <div class="title-name"><h3>Finca El Sueño De Mi Abuelo </h3></div>
+        <div class="destino-info">
+            <div class="images">
+				<div class="left-cont"><div class="icons"><i class="fa-solid fa-arrow-left"></i></div></div>
+				<div class="slider">
+                    <img src="https://i.pinimg.com/736x/de/9c/0c/de9c0c46bc1fd8c11d8294c75497ab66.jpg" alt="Imagen 1" class="slide">
+					<img src="https://i.pinimg.com/736x/1a/7b/b5/1a7bb5379d9e19cba234ad85310faa8f.jpg" alt="Imagen 2" class="slide">
+                    <img src="https://i.pinimg.com/736x/12/96/a9/1296a9e9d1574f9e76fb5b42675c598c.jpg" alt="Imagen 3" class="slide">
+					<img src="https://i.pinimg.com/736x/ac/b0/d0/acb0d0488f3928981ae8cfa2f558e58d.jpg" alt="Imagen 4" class="slide">
+                    <img src="https://i.pinimg.com/736x/bb/36/54/bb3654a1c747445eb58addfb0465b2d4.jpg" alt="Imagen 5" class="slide">
+                </div>
+				<div class="category">
+					<div class="type-category"><i class="fa-solid fa-dove"></i><span>AVIFAUNA</span></div>
+				</div>
+				<div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+				<div class="right-cont"><div class="icons"><i class="fa-regular fa-heart"></i> <i class="fa-solid fa-arrow-right"></i> <i class="fa-solid fa-id-badge"></i></div></div>
+			</div>
+
+			<div class="desc">
+				<div class="title-name"><h3>Acerca de</h3></div>
+				<div class="desc-span">
+					<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque exercitationem et, aliquid quo doloremque cumque rerum eveniet, ea consequuntur modi nam odit! Asperiores corporis quaerat quisquam, pariatur ipsa voluptatibus aspernatur!</span>
+				</div>
+			</div>
+
+        </div>
+
+		<div class="services">
+			<div class="left-cont" id="arrow-ab-l"><div class="icons"><i class="fa-solid fa-arrow-left"></i></div></div>
+			<div class="title-name"><h3>SERVICIOS</h3></div>
+			<div class="cardContainer">
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+			</div>
+			<div class="right-cont" id="arrow-ab-r"><div class="icons"><i class="fa-solid fa-arrow-right"></i></i></div></div>
+		</div>
+
+		<div class="activities">
+			<div class="left-cont" id="arrow-ab-l2"><div class="icons"><i class="fa-solid fa-arrow-left"></i></div></div>
+			<div class="title-name"><h3>ACTIVIDADES</h3></div>
+			<div class="cardContainer2">
+				<div class="card-item">
+					<div class="price"><span>$52.000</span></div>
+					<h2>Servicio Name Servicio Name Servicio Name Servicio</h2>
+					<img src="https://i.pinimg.com/736x/b7/74/c0/b774c0bd4e8e9597545bdd9002cdc122.jpg">
+					<button class="show-more">VER MÁS</button>
+				</div>
+			</div>
+			<div class="right-cont" id="arrow-ab-r2"><div class="icons"><i class="fa-solid fa-arrow-right"></i></i></div></div>
+		</div>
+
+		<div class="comments">
+			<div class="resenas-container">
+				<div class="comment-stars">
+					<i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+				</div>
+				<div class="title-name"><h3>COMENTARIOS</h3></div>
+				<div class="form-container">
+					<form class="form-resena">
+						<select required id="stars">
+							<option ></option>
+							<option >1 ★</option>
+							<option >2 ★</option>
+							<option >3 ★</option>
+							<option >4 ★</option>
+							<option >5 ★</option>
+						</select>
+						<textarea id="resena-span" placeholder="Permitenos saber tu experiencia con este destino..." required></textarea>
+						<button type="submit">PUBLICAR</button>
+					</form>
+				</div>
+				<div class="line"></div>
+				<div class="resenas">
+					<div class="resena-user">
+						<div class="user-info">
+							<img src="https://i.pinimg.com/736x/7c/3e/68/7c3e68f8e3620457f2232068b6ddad8e.jpg">
+							<span class="name-user">Camilo</span>
+						</div>
+						<div class="span-resena"><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur aut molestiae vel consequuntur quod eius sunt maiores optio, illo necessitatibus, nisi magnam? Aut ipsam modi ea deserunt exercitationem itaque possimus?</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button id="showModalBtn">Mostrar Imagen</button>
+		<div id="overlay">
+			<div id="modal">
+			  <img src="https://i.pinimg.com/736x/be/90/75/be9075d29735bc86e0707082b653eb55.jpg" alt="Imagen de ejemplo">
+			  <p>¡Hola! Este es un mensaje dentro del modal.</p>
+			  <button id="closeBtn">Cerrar</button>
+			</div>
+		  </div>
+    </main>
+
+    <script src="main.js" defer></script>
+
+</body>
+</html>
