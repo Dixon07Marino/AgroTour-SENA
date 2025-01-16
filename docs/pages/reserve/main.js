@@ -70,24 +70,52 @@ function previousItem(cardContainer2, scrollDistance2) {
   cardContainer2.scrollBy({ left: -scrollDistance2, behavior: "smooth" });
 }
 
-const showModalBtn = document.getElementById('showModalBtn');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('closeBtn');
+// Obtener el modal y sus elementos
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close-btn');
+const modalImage = document.getElementById('modal-image');
+const modalText = document.getElementById('modal-text');
 
-    // Mostrar el modal
-    showModalBtn.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-    });
+// Crear un array con las imágenes y textos que quieres mostrar (puedes ampliarlo)
+const modalContent = [
+    { image: 'https://i.pinimg.com/736x/a9/dd/1c/a9dd1c9f908aab719b030eeac5260e8e.jpg', text: 'Texto para la primera tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' },
+    { image: 'https://i.pinimg.com/736x/cb/7b/36/cb7b36425f76454e12bc47a7eb89781a.jpg', text: 'Texto para la segunda tarjeta.' }
+];
 
-    // Ocultar el modal
-    closeBtn.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
+// Delegación de eventos: Asignar evento de clic a todos los botones .btn-show-more
+document.body.addEventListener('click', function(event) {
+    // Verificar si el clic fue en un botón con clase 'btn-show-more'
+    if (event.target && event.target.classList.contains('show-more')) {
+        // Obtener el índice del botón dentro de su contenedor .card-item
+        const index = Array.from(document.querySelectorAll('.card-item')).indexOf(event.target.closest('.card-item'));
 
-    // Cerrar el modal al hacer clic fuera del contenido
-    window.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        overlay.style.display = 'none';
-      }
-    });
-  
+        // Verificar si hay contenido para ese índice en el array
+        if (modalContent[index]) {
+            modalImage.src = modalContent[index].image;
+            modalText.textContent = modalContent[index].text;
+            modal.style.display = 'block';
+        }
+    }
+});
+
+// Funcionalidad para cerrar el modal
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Cerrar el modal si se hace clic fuera del contenido
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});

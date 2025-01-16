@@ -36,17 +36,6 @@ function samePasswords () {
         return false;
     }
 
-        const user = document.getElementById("user").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("pass").value;
-        const password2 = document.getElementById("pass2").value;
-        alert(`Tu informacion es: 
-        Usuario: ${user} 
-        Correo: ${email}
-        Contraseña: ${password}
-        Confirmación contraseña: ${password2}
-        `);
-
     window.location.href = "../../index.html";
     return false;
 }

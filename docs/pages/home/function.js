@@ -78,6 +78,7 @@ function closeSidebar() {
     dmenu.classList.remove("on");
 }
 
+
 // Nueva función para renderizar productos
 fetch('https://delapazfonseca21.github.io/data/db.json')
 .then(response => response.json())
@@ -103,7 +104,7 @@ function renderProductos(productos, contenedorId) {
         info.className = "info";
         const destino = document.createElement("div");
         destino.className = "tipo";
-        destino.id = "destino";
+        destino.id = "paquete";
 
         // Se le agrega contenido
         const tipo = document.createElement("span");
@@ -131,6 +132,7 @@ function renderProductos(productos, contenedorId) {
         contenido.textContent = producto.titulo;
         description.appendChild(contenido);
 
+
         productoDiv.appendChild(info);
         productoDiv.appendChild(imagen);
         productoDiv.appendChild(description);
@@ -138,3 +140,5 @@ function renderProductos(productos, contenedorId) {
         contenedor.appendChild(productoDiv);
     });
 }
+
+

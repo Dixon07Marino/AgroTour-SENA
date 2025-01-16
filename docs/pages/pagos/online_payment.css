@@ -436,7 +436,7 @@ input[type="number"]{
 .dataContainer{
     display:flex;
     flex-direction: row;
-    text-align:left;
+    align-items: center;
     margin:auto;
     padding:2px;
 }
@@ -445,6 +445,7 @@ input[type="number"]{
     color:rgb(9, 71, 4);
     padding:4px;
     margin-left: 10px;
+    font-weight: 700;
 }
 
 #error-messege{

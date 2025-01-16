@@ -21,13 +21,5 @@ function togglePasswords() {
 function goHome(event) {
     event.preventDefault();
 
-    const email = document.getElementById("user").value;
-    const password = document.getElementById("pass").value;
-    const check = document.getElementById("check").value;
-    alert(`Tu informacion es: 
-	Usuario / Correo: ${email}
-	Contraseña: ${password}
-    Recordarme la próxima: ${check}`);
-
     window.location.href = "pages/home/index.html";
     }

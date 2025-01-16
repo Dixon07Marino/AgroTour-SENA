@@ -478,7 +478,8 @@ let tryButton = sendButton.addEventListener("click", function(){
         },6000)
     }
     else{
-        window.location.href = "online_payment2.html"
+        // window.location.href = "online_payment2.html"
+        alert("Opción no disponible de momento!")
     }
 });
 

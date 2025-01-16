@@ -150,9 +150,11 @@ label {
 	position: relative;
 }
 
-.input:hover i {
-	color: white;
-	cursor: pointer;
+.input:hover {
+
+	i {
+		color: #239A14;
+	}
 }
 
 .input i {
@@ -161,7 +163,12 @@ label {
 	position: absolute;
 	left: 93%;
 	top: 22%;
-	transition: 0.3s ease-out;
+	cursor: pointer;
+}
+
+.input i:hover {
+	color: white;
+	cursor: pointer;
 }
 
 .info {

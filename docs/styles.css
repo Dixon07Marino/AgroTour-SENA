@@ -47,6 +47,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 .user:hover, .pass:hover, .email:hover {
 	-webkit-text-fill-color: #239A14;
 	background: white;
+	-webkit-text-stroke-color: red;
 }
 
 input[type="checkbox"] {
@@ -150,9 +151,11 @@ label {
 	position: relative;
 }
 
-.input:hover i {
-	color: white;
-	cursor: pointer;
+.input:hover {
+
+	i {
+		color: #239A14;
+	}
 }
 
 .input i {
@@ -161,6 +164,11 @@ label {
 	position: absolute;
 	left: 93%;
 	top: 22%;
+	cursor: pointer;
+}
+
+.input i:hover {
+	color: white;
 	cursor: pointer;
 }
 
