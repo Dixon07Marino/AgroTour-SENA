@@ -347,6 +347,7 @@ img {
 	min-width: 100px;
 	padding-bottom: -10px;
 	color: #614003;
+	font-weight: 600;
 	border-top-left-radius: 8px; 
     border-top-right-radius: 8px; 
 	border: 2px solid #1E3920;
@@ -493,31 +494,24 @@ img {
 }
 
 .mas {
-	border: 2px solid rgb(174, 215, 159);
-	background: rgb(9, 71, 4);
+	background: #239A14;
+	border: white 3px solid;
+	font-size: 15px;
+	font-weight: 600;
 	color: white;
-	width: 129px;
-	font-size: 12.5px;
-	padding-right: 5px;
-	padding-left: 5px;
-	padding-top: 1px; 
-	text-align: center;
-	display: flex;
-	height: 30px;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	transition: 0.2s ease;
-}
-
-.info2 a {
+	margin-bottom: -10px;
+	padding: 3px;
+	position: relative;
+	top: 3%;
 	text-decoration: none;
 }
 
 .mas:hover {
-	transform: scale(1.1);
-	background: rgb(27, 179, 80);
-	font-size: 13.5px;
+	background: #3cd927;
+}
+
+.info2 a {
+	text-decoration: none;
 }
 
 .dots {

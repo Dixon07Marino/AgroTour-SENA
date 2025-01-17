@@ -132,10 +132,18 @@ function renderProductos(productos, contenedorId) {
         contenido.textContent = producto.titulo;
         description.appendChild(contenido);
 
+        // Crear el botón "Más" y el enlace
+        const enlaceMas = document.createElement("a");
+        enlaceMas.href = "../reserve/index.html"; // Ruta relativa a otro HTML
+        enlaceMas.className = "mas";
+        enlaceMas.id = "mas";
+        enlaceMas.textContent = "SABER MÁS";
+
 
         productoDiv.appendChild(info);
         productoDiv.appendChild(imagen);
         productoDiv.appendChild(description);
+        productoDiv.appendChild(enlaceMas);
 
         contenedor.appendChild(productoDiv);
     });
