@@ -337,7 +337,7 @@ input[type="number"]{
     margin-top: 10px;
 }
 
-.g-button, .c-button {
+.g-button, .c-button, .pdf-button {
 	width: 23%;
 	align-self: center;
 }
@@ -508,6 +508,26 @@ input[type="number"]{
 #calculate-reserve-price:hover{
     background-color: yellow;
     color: #614003;
+    cursor:pointer;
+}
+
+/* Estilos para el boton que genera el pdf, si se quiere cambiar adelante */
+
+#generate-pdf{
+    background-color: #c10202;
+    color: white;
+    cursor:pointer;
+    border-style:hidden;
+    justify-content:end;
+    padding:10px;
+    border-radius: 9px;
+    transition:0.3s ease;
+	font-weight: 600;
+}
+
+#generate-pdf:hover{
+    background-color: rgb(246, 36, 36);
+    color: #770202;
     cursor:pointer;
 }
 

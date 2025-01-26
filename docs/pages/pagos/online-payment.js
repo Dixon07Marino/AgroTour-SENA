@@ -579,5 +579,67 @@ function closeSidebar() {
 	dmenu.classList.remove("on")
 }
 
+//Generar PDF
+document.getElementById("generate-pdf").addEventListener("click", function() {
+    const reserveBeginning = document.getElementById("reserve-beginning").value;
+    const reserveEnd = document.getElementById("reserve-end").value;
+    const costumers = document.getElementById("costumers-amount").value;
 
+    if (!reserveBeginning || !reserveEnd || !costumers) {
+        alert("Por favor, complete todos los campos obligatorios antes de generar el PDF.");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const activities = [
+        { name: "Cabalgata", quantity: document.getElementById("entry-value1").value, total: document.getElementById("exit-value1").value },
+        { name: "Mariposario", quantity: document.getElementById("entry-value2").value, total: document.getElementById("exit-value2").value },
+        { name: "Avifauna", quantity: document.getElementById("entry-value3").value, total: document.getElementById("exit-value3").value },
+        { name: "Guía Básica de Fotografía", quantity: document.getElementById("entry-value4").value, total: document.getElementById("exit-value4").value },
+        { name: "Cosecha de café", quantity: document.getElementById("entry-value5").value, total: document.getElementById("exit-value5").value },
+        { name: "Alimentación de Potros", quantity: document.getElementById("entry-value6").value, total: document.getElementById("exit-value6").value },
+        { name: "Aguas termales", quantity: document.getElementById("entry-value7").value, total: document.getElementById("exit-value7").value },
+        { name: "Pesca", quantity: document.getElementById("entry-value8").value, total: document.getElementById("exit-value8").value }
+    ];
+
+    let y = 10;
+    doc.setFontSize(18);
+    doc.setTextColor(0, 128, 0); // color verde para la palabra "Agro"
+    doc.text("AgroTour", 10, y);
+    y += 10;
+    doc.setTextColor(0, 0, 0); // Reinicio del color
+    doc.setFontSize(12);
+    doc.text(`Fecha de inicio de reserva: ${reserveBeginning}`, 10, y);
+    y += 10;
+    doc.text(`Fecha de finalización de la reserva: ${reserveEnd}`, 10, y);
+    y += 10;
+    doc.text(`Cantidad de personas: ${costumers}`, 10, y);
+    y += 10;
+
+    doc.setFontSize(14);
+    doc.text("Actividades Agroturísticas:", 10, y);
+    y += 10;
+    doc.setFontSize(12);
+    activities.forEach(activity => {
+        if (activity.quantity > 0) {
+            doc.text(`${activity.name}: ${activity.quantity} - $${activity.total}`, 10, y);
+            y += 10;
+        }
+    });
+
+    const total = activities.reduce((sum, activity) => sum + parseInt(activity.total || 0), 120000);
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(`Valor total: $${total}`, 10, y);
+
+    // Para guardar el PDF
+    // doc.save("factura_reserva.pdf");
+
+    // O abrirlo en una nueva ventana
+    const pdfDataUri = doc.output('dataurlstring');
+    const newWindow = window.open();
+    newWindow.document.write(`<iframe width='100%' height='100%' src='${pdfDataUri}'></iframe>`);
+});
 
