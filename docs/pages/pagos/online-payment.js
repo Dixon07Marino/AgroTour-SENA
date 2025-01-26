@@ -584,8 +584,11 @@ document.getElementById("generate-pdf").addEventListener("click", function() {
     const reserveBeginning = document.getElementById("reserve-beginning").value;
     const reserveEnd = document.getElementById("reserve-end").value;
     const costumers = document.getElementById("costumers-amount").value;
+    const activity1 = document.getElementById("entry-value1").value;
+    const activity2 = document.getElementById("entry-value2").value;
+    const activity3 = document.getElementById("entry-value3").value;
 
-    if (!reserveBeginning || !reserveEnd || !costumers) {
+    if (!reserveBeginning || !reserveEnd || !costumers || !activity1 || !activity2 || !activity3) {
         alert("Por favor, complete todos los campos obligatorios antes de generar el PDF.");
         return;
     }
