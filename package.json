@@ -1,6 +1,6 @@
 {
   "name": "agrotour-sena",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "",
   "main": "docs/index.js",
   "type": "module",
@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon --exec node docs/index.js"
+    "dev": "nodemon --exec node docs/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,15 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "jspdf": "^2.5.2"
+    "jspdf": "^2.5.2",
+    "promise-mysql": "^5.2.0"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.9"
   }
 }
