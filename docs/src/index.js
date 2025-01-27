@@ -1,5 +1,4 @@
 import express from 'express';
-
 import database from './databases.js';
 //Módulos para la correcta implemnetación de las direcciones
 
@@ -23,3 +22,15 @@ app.use(express.static(path.join(__dirname, "../")));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'index.html'));
 });
+
+app.get("/usuarios", async (req, res) => {
+    try {
+      const conexion = database.getConnection(); // Llama a la función
+      const resultado = await conexion.query("SELECT * FROM usuarios");
+      res.json(resultado);
+    } catch (error) {
+      console.error("Error al obtener usuarios:", error);
+      res.status(500).json({ error: "Error al obtener usuarios" });
+    }
+  });
+  

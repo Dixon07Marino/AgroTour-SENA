@@ -30,4 +30,4 @@ const getConnection = () => {
 // Inicializar la conexión
 createConnection();
 
-export default getConnection;
+export default { getConnection };
