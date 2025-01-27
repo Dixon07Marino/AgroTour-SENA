@@ -53,7 +53,7 @@ let addAnItem6 = document.getElementById("add-item6");
 let addAnItem7 = document.getElementById("add-item7");
 let addAnItem8 = document.getElementById("add-item8");
 
-let removeItem = document.getElementById("remove-item");
+let removeItem = document.getElementById("remove-item1");
 let removeItem2 = document.getElementById("remove-item2");
 let removeItem3 = document.getElementById("remove-item3");
 let removeItem4 = document.getElementById("remove-item4");
@@ -546,6 +546,19 @@ calculateButton.addEventListener("click", function () {
     costContainer.innerHTML = `<h1>Total: $ ${total}</h1>`;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Recorremos todos los botones de eliminación
+    for (let i = 1; i <= 8; i++) {
+        let removeButton = document.getElementById(`remove-item${i}`);
+        let inputField = document.getElementById(`entry-value${i}`);
+
+        if (removeButton && inputField && inputField.type === "number") {
+            removeButton.addEventListener("click", function () {
+                inputField.value = ""; // Limpia el input de tipo number
+            });
+        }
+    }
+});
 
     let closeModal = document.getElementById("close-modal").addEventListener("click",()=>{
         modal.style.display = "none";
@@ -579,14 +592,14 @@ document.getElementById("generate-pdf").addEventListener("click", function() {
     const doc = new jsPDF();
 
     const activities = [
-        { name: "Cabalgata", quantity: document.getElementById("entry-value1").value, total: document.getElementById("exit-value1").value },
-        { name: "Mariposario", quantity: document.getElementById("entry-value2").value, total: document.getElementById("exit-value2").value },
-        { name: "Avifauna", quantity: document.getElementById("entry-value3").value, total: document.getElementById("exit-value3").value },
-        { name: "Guía Básica de Fotografía", quantity: document.getElementById("entry-value4").value, total: document.getElementById("exit-value4").value },
-        { name: "Cosecha de café", quantity: document.getElementById("entry-value5").value, total: document.getElementById("exit-value5").value },
-        { name: "Alimentación de Potros", quantity: document.getElementById("entry-value6").value, total: document.getElementById("exit-value6").value },
-        { name: "Aguas termales", quantity: document.getElementById("entry-value7").value, total: document.getElementById("exit-value7").value },
-        { name: "Pesca", quantity: document.getElementById("entry-value8").value, total: document.getElementById("exit-value8").value }
+        { name: "Pesca", quantity: document.getElementById("entry-value1").value, total: document.getElementById("exit-value1").value },
+        { name: "Excursionismo", quantity: document.getElementById("entry-value2").value, total: document.getElementById("exit-value2").value },
+        { name: "Jardín", quantity: document.getElementById("entry-value3").value, total: document.getElementById("exit-value3").value },
+        { name: "Billar Americano", quantity: document.getElementById("entry-value4").value, total: document.getElementById("exit-value4").value },
+        { name: "Ping pong", quantity: document.getElementById("entry-value5").value, total: document.getElementById("exit-value5").value },
+        { name: "Piscina", quantity: document.getElementById("entry-value6").value, total: document.getElementById("exit-value6").value },
+        { name: "Karaoke", quantity: document.getElementById("entry-value7").value, total: document.getElementById("exit-value7").value },
+        { name: "Club nocturno", quantity: document.getElementById("entry-value8").value, total: document.getElementById("exit-value8").value }
     ];
 
     let y = 10;
