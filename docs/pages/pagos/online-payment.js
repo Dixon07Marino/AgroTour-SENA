@@ -63,17 +63,17 @@ let removeItem7 = document.getElementById("remove-item7");
 let removeItem8 = document.getElementById("remove-item8");
 
 let calculateHorseRide = entryValueH.addEventListener("change",function(){
-    let operation = parseInt(entryValueH.value) * 40000;
+    let operation = parseInt(entryValueH.value) * 14000;
     exitValueH.value = operation;
 });
 
 let calculateButterflyFarm = entryValueB.addEventListener("change",function(){
-    let operation = parseInt(entryValueB.value) * 20000;
+    let operation = parseInt(entryValueB.value) * 16000;
     exitValueB.value = operation;
 });
 
 let calculateAvifauna = entryValueBird.addEventListener("change",function(){
-    let operation = parseInt(entryValueBird.value) * 60000;
+    let operation = parseInt(entryValueBird.value) * 14000;
     exitValueBird.value = operation;
 });
 
@@ -83,22 +83,22 @@ let calculatePhotoGuide = entryValuePhoto.addEventListener("change",function(){
 });
 
 let calculateCoffeeHarvest = entryValueCoffee.addEventListener("change",function(){
-    let operation = parseInt(entryValueCoffee.value) * 15000;
+    let operation = parseInt(entryValueCoffee.value) * 6000;
     exitValueCoffee.value = operation;
 });
 
 let calculateFoalFeed = entryValueFoalF.addEventListener("change",function(){
-    let operation = parseInt(entryValueFoalF.value) * 12000;
+    let operation = parseInt(entryValueFoalF.value) * 6000;
     exitValueFoalF.value = operation;
 });
 
 let calculateThermalW = entryValueThermalW.addEventListener("change",function(){
-    let operation = parseInt(entryValueThermalW.value) * 40000;
+    let operation = parseInt(entryValueThermalW.value) * 12000;
     exitValueThermalW.value = operation;
 });
 
 let calculateFishing = entryValueFishing.addEventListener("change",function(){
-    let operation = parseInt(entryValueFishing.value) * 20000;
+    let operation = parseInt(entryValueFishing.value) * 10000;
     exitValueFishing.value = operation;
 });
 
@@ -111,7 +111,7 @@ let infoExist = document.getElementById("saleInfo");
             infoExist.style.transition = "0.23s";
         }
         else{
-            infoExist.innerHTML = `Número de cabalgatas: ${entryValueH.value}\nValor total a pagar: $${exitValueH.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueH.value}\n - Valor total a pagar: $${exitValueH.value}`;
             infoExist.setAttribute("class","success");
             entryValueH.setAttribute("readonly","true");
             removeItem.style.display = "inline-block";
@@ -128,7 +128,7 @@ let infoExist = document.getElementById("saleInfo");
             newCreatedE.setAttribute("class","mistake");
         }
         else{
-            newCreatedE.innerHTML = `Número de cabalgatas: ${entryValueH.value}\nValor total a pagar: $${exitValueH.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueH.value}\n - Valor total a pagar: $${exitValueH.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueH.setAttribute("readonly","true");
             removeItem.style.display = "inline-block";
@@ -153,7 +153,7 @@ let infoExist = document.getElementById("saleInfo2");
             infoExist.setAttribute("class","mistake");
         }
         else{
-            infoExist.innerHTML = `Número de entradas al mariposario: ${entryValueB.value}\nValor total a pagar: $${exitValueB.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueB.value}\n - Valor total a pagar: $${exitValueB.value}`;
             infoExist.setAttribute("class","success");
             entryValueB.setAttribute("readonly","true");
             removeItem2.style.display = "inline-block";
@@ -170,7 +170,7 @@ let infoExist = document.getElementById("saleInfo2");
             newCreatedE.setAttribute("class","mistake");
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas al mariposario: ${entryValueB.value}\nValor total a pagar: $${exitValueB.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueB.value}\n - Valor total a pagar: $${exitValueB.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueB.setAttribute("readonly","true");
             removeItem2.style.display = "inline-block";
@@ -195,7 +195,7 @@ let infoExist = document.getElementById("saleInfo3");
            infoExist.setAttribute("class","mistake");
          }
        else{
-           infoExist.innerHTML = `Número de entradas para la avifauna: ${entryValueBird.value}\nValor total a pagar: $${exitValueBird.value}`;
+           infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueBird.value}\n - Valor total a pagar: $${exitValueBird.value}`;
            infoExist.setAttribute("class","success");
            entryValueBird.setAttribute("readonly","true");
            removeItem3.style.display = "inline-block";
@@ -213,7 +213,7 @@ let infoExist = document.getElementById("saleInfo3");
             
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas para la avifauna: ${entryValueBird.value}\nValor total a pagar: $${exitValueBird.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueBird.value}\n - Valor total a pagar: $${exitValueBird.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueBird.setAttribute("readonly","true");
             removeItem3.style.display = "inline-block";
@@ -239,7 +239,7 @@ let infoExist = document.getElementById("saleInfo4");
             infoExist.setAttribute("class","mistake")
         }
         else{
-            infoExist.innerHTML = `Número de guías fotográficas: ${entryValuePhoto.value}\nValor total a pagar: $${exitValuePhoto.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValuePhoto.value}\n - Valor total a pagar: $${exitValuePhoto.value}`;
             infoExist.setAttribute("class","success");
             entryValuePhoto.setAttribute("readonly","true");
             removeItem4.style.display = "inline-block";
@@ -256,7 +256,7 @@ let infoExist = document.getElementById("saleInfo4");
             newCreatedE.setAttribute("class","mistake")
         }
         else{
-            newCreatedE.innerHTML = `Número de guías fotográficas: ${entryValuePhoto.value}\nValor total a pagar: $${exitValuePhoto.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValuePhoto.value}\n - Valor total a pagar: $${exitValuePhoto.value}`;
             newCreatedE.setAttribute("class","success");
             entryValuePhoto.setAttribute("readonly","true");
             removeItem4.style.display = "inline-block";
@@ -281,7 +281,7 @@ let infoExist = document.getElementById("saleInfo5");
             infoExist.setAttribute("class","mistake");   
         }
         else{
-            infoExist.innerHTML = `Número de entradas a cosecha de café: ${entryValueCoffee .value}\nValor total a pagar: $${exitValueCoffee .value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueCoffee .value}\n - Valor total a pagar: $${exitValueCoffee .value}`;
             infoExist.setAttribute("class","success");
             entryValueCoffee.setAttribute("readonly","true");
             removeItem5.style.display = "inline-block";
@@ -298,7 +298,7 @@ let infoExist = document.getElementById("saleInfo5");
             newCreatedE.setAttribute("class","mistake")  
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas a cosecha de café: ${entryValueCoffee .value}\nValor total a pagar: $${exitValueCoffee .value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueCoffee .value}\n - Valor total a pagar: $${exitValueCoffee .value}`;
             newCreatedE.setAttribute("class","success");
             entryValueCoffee.setAttribute("readonly","true");
             removeItem5.style.display = "inline-block";
@@ -323,7 +323,7 @@ let infoExist = document.getElementById("saleInfo6");
             infoExist.setAttribute("class","mistake")
         }
         else{
-            infoExist.innerHTML = `Número de entradas para alimentación de potros: ${entryValueFoalF.value}\nValor total a pagar: $${exitValueFoalF.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueFoalF.value}\n - Valor total a pagar: $${exitValueFoalF.value}`;
             infoExist.setAttribute("class","success");
             entryValueFoalF.setAttribute("readonly","true");
             removeItem6.style.display = "inline-block";
@@ -340,7 +340,7 @@ let infoExist = document.getElementById("saleInfo6");
             newCreatedE.setAttribute("class","mistake")
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas para alimentación de potros: ${entryValueFoalF.value}\nValor total a pagar: $${exitValueFoalF.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueFoalF.value}\n - Valor total a pagar: $${exitValueFoalF.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueFoalF.setAttribute("readonly","true");
             removeItem6.style.display = "inline-block";
@@ -365,7 +365,7 @@ let infoExist = document.getElementById("saleInfo7");
             infoExist.setAttribute("class","mistake")
         }
         else{
-            infoExist.innerHTML = `Número de entradas a agua termales: ${entryValueThermalW.value}\nValor total a pagar: $${exitValueThermalW.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueThermalW.value}\n - Valor total a pagar: $${exitValueThermalW.value}`;
             infoExist.setAttribute("class","success");
             entryValueThermalW.setAttribute("readonly","true");
             removeItem7.style.display = "inline-block";
@@ -382,7 +382,7 @@ let infoExist = document.getElementById("saleInfo7");
             newCreatedE.setAttribute("class","mistake")
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas a agua termales: ${entryValueThermalW.value}\nValor total a pagar: $${exitValueThermalW.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueThermalW.value}\n - Valor total a pagar: $${exitValueThermalW.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueThermalW.setAttribute("readonly","true");
             removeItem7.style.display = "inline-block";
@@ -408,7 +408,7 @@ let infoExist = document.getElementById("saleInfo8");
             infoExist.setAttribute("class","mistake")
         }
         else{
-            infoExist.innerHTML = `Número de entradas de pesca: ${entryValueFishing.value}\nValor total a pagar: $${exitValueFishing.value}`;
+            infoExist.innerHTML = `Cantidad de esta actividad: ${entryValueFishing.value}\n - Valor total a pagar: $${exitValueFishing.value}`;
             infoExist.setAttribute("class","success");
             entryValueFishing.setAttribute("readonly","true");
             removeItem8.style.display = "inline-block";
@@ -425,7 +425,7 @@ let infoExist = document.getElementById("saleInfo8");
             newCreatedE.setAttribute("class","mistake")
         }
         else{
-            newCreatedE.innerHTML = `Número de entradas de pesca: ${entryValueFishing.value}\nValor total a pagar: $${exitValueFishing.value}`;
+            newCreatedE.innerHTML = `Cantidad de esta actividad: ${entryValueFishing.value}\n - Valor total a pagar: $${exitValueFishing.value}`;
             newCreatedE.setAttribute("class","success");
             entryValueFishing.setAttribute("readonly","true");
             removeItem8.style.display = "inline-block";
@@ -469,7 +469,7 @@ let tryButton = sendButton.addEventListener("click", function(){
         input.style.backgroundColor = "";
         input.style.borderColor = "";
         input.style.color = "";
-        },3000)
+        },7000)
       }
     })
     if (!allFine){
@@ -482,6 +482,7 @@ let tryButton = sendButton.addEventListener("click", function(){
         alert("Opción no disponible de momento!")
     }
 });
+
 
 let calculateButton = document.getElementById("calculate-reserve-price");
 let costContainer = document.getElementById("totalCost");
@@ -498,72 +499,53 @@ let thermalData = document.getElementById("thermalData");
 let fishData = document.getElementById("fishData");
 let modal = document.getElementById("purchase-info");
 
-let calculateTotalAmount = calculateButton.addEventListener("click",function(){
-   
-   modal.style.display = "inline-block";
+calculateButton.addEventListener("click", function () {
+    modal.style.display = "inline-block";
 
-        let total = parseInt(exitValueH.value) + parseInt(exitValueB.value) + parseInt(exitValueBird.value) + parseInt(exitValuePhoto.value) + parseInt(exitValueCoffee.value) + parseInt(exitValueFoalF.value) + parseInt(exitValueThermalW.value) + parseInt(exitValueFishing.value) + 120000;
+    // Convertir los valores a números, asegurando que sean válidos
+    let total = 
+        (Number(exitValueH?.value) || 0) + 
+        (Number(exitValueB?.value) || 0) + 
+        (Number(exitValueBird?.value) || 0) + 
+        (Number(exitValuePhoto?.value) || 0) + 
+        (Number(exitValueCoffee?.value) || 0) + 
+        (Number(exitValueFoalF?.value) || 0) + 
+        (Number(exitValueThermalW?.value) || 0) + 
+        (Number(exitValueFishing?.value) || 0) + 
+        120000;
 
-        let printDate1 = document.createElement("span");
-        dateStartData.appendChild(printDate1);
-        printDate1.className = "info"
-        printDate1.innerHTML = reserveBeginning.value;
+    // Función para agregar etiquetas y valores en el modal
+    const createInfoRow = (container, label, value) => {
+        container.innerHTML = ""; // Limpiar contenido previo
+        let labelSpan = document.createElement("span");
+        labelSpan.className = "info-label";
+        labelSpan.innerHTML = `<strong>${label}: </strong>`;
+        
+        let valueSpan = document.createElement("span");
+        valueSpan.className = "info";
+        valueSpan.innerHTML = value || "N/A";
 
-        let printDate2 = document.createElement("span");
-        dateEndData.appendChild(printDate2);
-        printDate2.className = "info";
-        printDate2.innerHTML = reserveEnd.value;
+        container.appendChild(labelSpan);
+        container.appendChild(valueSpan);
+    };
 
-        let printC = document.createElement("span")
-        amountCostumsData.appendChild(printC);
-        printC.className = "info";
-        printC.innerHTML = costumers.value;
+    // Agregar la información con etiquetas
+    createInfoRow(dateStartData, "Fecha de inicio", reserveBeginning?.value);
+    createInfoRow(dateEndData, "Fecha de fin", reserveEnd?.value);
+    createInfoRow(amountCostumsData, "Cantidad de clientes", costumers?.value);
+    createInfoRow(horseRideData, "Pesca", exitValueH?.value);
+    createInfoRow(butterflyData, "Excursionismo", exitValueB?.value);
+    createInfoRow(avifaunaData, "Jardin", exitValueBird?.value);
+    createInfoRow(photoData, "Billar Americano", exitValuePhoto?.value);
+    createInfoRow(coffeeData, "Ping Pong", exitValueCoffee?.value);
+    createInfoRow(foalData, "Piscina", exitValueFoalF?.value);
+    createInfoRow(thermalData, "Karaoke", exitValueThermalW?.value);
+    createInfoRow(fishData, "Club Nocturno", exitValueFishing?.value);
 
-        let printHorse = document.createElement("span");
-        horseRideData.appendChild(printHorse);
-        printHorse.className = "info";
-        printHorse.innerHTML = entryValueH.value;
+    // Mostrar el total
+    costContainer.innerHTML = `<h1>Total: $ ${total}</h1>`;
+});
 
-        let printButterfly = document.createElement("span");
-        butterflyData.appendChild(printButterfly);
-        printButterfly.className = "info";
-        printButterfly.innerHTML = entryValueB.value;
-
-        let printAvifauna = document.createElement("span");
-        avifaunaData.appendChild(printAvifauna);
-        printAvifauna.className = "info";
-        printAvifauna.innerHTML = entryValueBird.value;
-
-        let printPhoto = document.createElement("span");
-        photoData.appendChild(printPhoto);
-        printPhoto.className = "info";
-        printPhoto.innerHTML = entryValuePhoto.value;
-
-        let printCoffee = document.createElement("span");
-        coffeeData.appendChild(printCoffee);
-        printCoffee.className = "info";
-        printCoffee.innerHTML = entryValueCoffee.value;
-
-        let printFoal = document.createElement("span");
-        foalData.appendChild(printFoal);
-        printFoal.className = "info";
-        printFoal.innerHTML = entryValueFoalF.value;
-
-        let printThermal = document.createElement("span");
-        thermalData.appendChild(printThermal);
-        printThermal.className = "info";
-        printThermal.innerHTML = entryValueThermalW.value;
-
-        let printFish = document.createElement("span");
-        fishData.appendChild(printFish);
-        printFish.className = "info";
-        printFish.innerHTML = entryValueFishing.value;
-
-        let uploadInfo = document.createElement("h1");
-        modal.style.display = "inline-block";
-        costContainer.appendChild(uploadInfo);
-        uploadInfo.innerHTML = `$ ${total}`;
-    })
 
     let closeModal = document.getElementById("close-modal").addEventListener("click",()=>{
         modal.style.display = "none";

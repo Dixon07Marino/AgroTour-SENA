@@ -251,20 +251,8 @@ input[type="number"]{
     color:rgb(35, 154, 20);
     padding:4px;
     margin:2px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 	text-align: center;
-}
-
-.titles::after{
-    content:"";
-    position:absolute;
-    background-image:url("hoja.png");
-    background-size:cover;
-    background-repeat:no-repeat;
-    display:inline-block;
-    margin-left:4px;
-    width:24px;
-    height:24px;
 }
 
 .actividades{
@@ -290,7 +278,7 @@ input[type="number"]{
     padding:4px;
     margin:2px auto;
     border-radius: 8px;
-    width:70%;
+    width:83%;
 	text-align: center;
 }
 
@@ -394,12 +382,12 @@ input[type="number"]{
 .mistake{
 	position: absolute;
 	left: 0;
-	top: 188.5%;
+	translate: 0 -110%;
     background-color: rgb(250, 50, 60);
     justify-content: center;
-    padding:6px;
+    padding:0.7rem;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:14px;
+    font-size:1.5rem;
     color: white;
     text-align:center;
     transition:0.23s;
@@ -408,6 +396,8 @@ input[type="number"]{
     transform:none;
     transition:0.23s;
 	align-self: center;
+	width: 26.10%;
+	margin-bottom: 6rem;
 }
 
 .add-button{
@@ -454,9 +444,13 @@ input[type="number"]{
 }
 
 #error-messege{
+	font-size: 1.8rem;
+	position: absolute;
     display: none;
     transition: 0.23s;
 	width: 100%;
+	translate: 0 32%;
+	padding: 3rem;
 }
 
 #save-reserve-info{
@@ -531,7 +525,7 @@ input[type="number"]{
 }
 
 #generate-pdf:hover{
-    background-color: rgb(246, 36, 36);
+    background-color: rgb(255, 65, 65);
     color: #770202;
     cursor:pointer;
 }
@@ -575,14 +569,21 @@ input[type="number"]{
 	border-radius: 10px;
 	padding-bottom: 50px;
 }
-#close-modal{
+.close-div{
+	font-size: 3rem;
+	position: absolute;
+	margin-top: 1rem;
+	margin-left: 1rem;
     border-radius:100%;
-    padding:4px;
-    width:10px;
-    height:10px;
-    transition:0.12s;
+    padding:0.4rem;
+    width:4rem;
+    height:4rem;
+	display: flex;
+	justify-content: center;
+    transition:0.3s ease-in-out;
+	align-items: center;
 }
-#close-modal:hover{
+.close-div:hover{
     background:rgb(50, 235, 25);
     cursor:pointer;
 }

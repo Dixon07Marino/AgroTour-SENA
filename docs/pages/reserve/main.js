@@ -42,6 +42,11 @@ const cardItemsData = [
         price: 'GRATIS',
         title: 'Acceso para sillas de ruedas',
         imageUrl: 'https://i.pinimg.com/736x/23/24/cb/2324cb948b6acb2cd78b1913ec67c362.jpg'
+    },
+    {
+      price: '$8.000',
+      title: 'Lavandería',
+      imageUrl: 'https://i.pinimg.com/736x/be/7a/0d/be7a0d375f5736bdb12969918c681b66.jpg'
     }
 ];
 
@@ -72,7 +77,6 @@ cardItemsData.forEach(item => {
     cardContainerS.appendChild(cardItem);
 });
 
-// Buscar el div con id "services"
 const servicesDiv = document.getElementById('services');
 
 // Asegurarse de que el div "services" existe y agregar el cardContainer como antepenúltimo hijo
@@ -87,14 +91,19 @@ cardContainerA.classList.add('cardContainer2');
 
 const cardItemsDataA = [
     {
-        price: '$8.000',
+        price: '$14.000',
         title: 'Pesca',
         imageUrl: 'https://i.pinimg.com/736x/8a/77/c6/8a77c6e8835fad40f7dd6aaff8426d0a.jpg'
     },
     {
-        price: '$13.000',
+        price: '$16.000',
         title: 'Excursionismo',
-        imageUrl: 'https://i.pinimg.com/736x/96/9f/76/969f76c21bbee1930174a12ed24f6f62.jpg'
+        imageUrl: 'https://i.pinimg.com/736x/f2/bb/93/f2bb93f35d0f8098aae4e547958c0d32.jpg'
+    },
+    {
+      price: '$5.000',
+      title: 'Jardín',
+      imageUrl: 'https://i.pinimg.com/736x/7d/31/2a/7d312ac06b49d75bc49f0ab3b730e88b.jpg'
     },
     {
         price: '$8.000',
@@ -110,6 +119,16 @@ const cardItemsDataA = [
         price: '$6.000',
         title: 'Piscina',
         imageUrl: 'https://finca-el-sueno-de-mi-abuelo-guest-house.hotelesejecafetero.net/data/Images/1920x1080w/15846/1584645/1584645754/image-pereira-finca-el-sueno-de-mi-abuelo-guest-house-70.JPEG'
+    },
+    {
+      price: '$12.000',
+      title: 'Karaoke',
+      imageUrl: 'https://i.pinimg.com/736x/3a/4b/74/3a4b746e1b7845560e6347241c7ad608.jpg'
+    },
+    {
+      price: '$10.000',
+     title: 'Club Nocturno',
+      imageUrl: 'https://i.pinimg.com/736x/10/66/32/106632408183e78ba2415859dab9f513.jpg'
     }
 ];
 
@@ -140,7 +159,6 @@ cardItemsDataA.forEach(item => {
     cardContainerA.appendChild(cardItem);
 });
 
-// Buscar el div con id "activities"
 const activitiesDiv = document.getElementById('activities');
 
 // Asegurarse de que el div "activities" existe y agregar el cardContainerA como antepenúltimo hijo

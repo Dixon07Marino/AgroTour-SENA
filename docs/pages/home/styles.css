@@ -338,10 +338,12 @@ img {
 
 #destino {
 	background: rgb(0, 176, 240);
+	font-weight: 700;
 }
 
 #paquete {
 	background: rgb(27, 179, 80);
+	font-weight: 700;
 }
 
 .precio {
