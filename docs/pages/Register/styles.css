@@ -29,6 +29,14 @@ html {
 
 form {
 	width: auto;
+
+	img {
+		position: absolute;
+		height: 20rem;
+		width: 20rem;
+		right: -20%;
+		top: -20%;
+	}
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
