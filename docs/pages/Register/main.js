@@ -40,3 +40,32 @@ function samePasswords () {
     return false;
 }
 
+//Funcionalidad de registro mediante metodo POST
+document.getElementById("registro-form").addEventListener("submit", async (e) => {
+    e.preventDefault();  // Evita que el formulario se envíe normalmente
+    console.log(e.target.children.user.value);  // Verifica los valores que se están tomando del formulario
+
+    const res = await fetch("http://localhost:4000/api/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            user: e.target.children.user.value,
+            email: e.target.children.email.value,
+            password: e.target.children.password.value
+        })
+    });
+
+    const data = await res.json();  // Lee la respuesta como JSON
+    console.log(data);  // Verifica la respuesta del servidor
+
+    if (res.ok) {
+        alert('Registro exitoso');
+        window.location.href = "/inicio";  // Redirige al usuario a otra página después del registro
+    } else {
+        alert('Error: ' + data.error);  // Muestra el error si algo salió mal
+    }
+});
+
+

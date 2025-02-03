@@ -1,4 +1,5 @@
-import mysql from 'promise-mysql';
+import mysql from 'promise-mysql'; //driver de base de datos
+//orm
 import dotenv from 'dotenv';
 dotenv.config();
 
