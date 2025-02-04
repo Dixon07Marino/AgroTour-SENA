@@ -1,0 +1,26 @@
+{
+  "name": "agrotour-sena",
+  "version": "4.1.1",
+  "description": "App de alojamiento agragrio Node.js + Firebase",
+  "main": "auth.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delapazfonseca21/AgroTour-SENA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delapazfonseca21/AgroTour-SENA/issues"
+  },
+  "homepage": "https://github.com/delapazfonseca21/AgroTour-SENA#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "jspdf": "^2.5.2"
+  }
+}

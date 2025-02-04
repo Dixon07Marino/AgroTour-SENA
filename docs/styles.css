@@ -13,7 +13,9 @@
 }
 
 
-
+.w-full.max-w-md.bg-white.p-8.rounded-lg.shadow-lg {
+	height: 700;
+}
 
 /* *
 {
