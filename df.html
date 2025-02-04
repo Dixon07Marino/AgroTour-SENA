@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | Portal</title>
+    <link rel="stylesheet" href="./docs/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center mb-4">Iniciar Sesión</h2>
+        <form id="loginForm" class="space-y-4">
+            <input type="email" id="loginEmail" placeholder="Correo electrónico" required
+                class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+            <div class="relative">
+                <input type="password" id="loginPassword" placeholder="Contraseña" required
+                    class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+                <button type="button" class="absolute right-3 top-3" id="toggleLoginPassword">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-eye">
+                        <path
+                            d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                </button>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Iniciar
+                sesión</button>
+        </form>
+        <p id="login-error-message" class="text-red-500 text-sm mt-2"></p>
+        <hr class="my-4">
+        <h2 class="text-2xl font-bold text-center mb-4">Registro de Usuario</h2>
+        <form id="registerForm" class="space-y-4">
+            <input type="text" id="registerName" placeholder="Nombre del usuario" required
+                class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+            <input type="email" id="registerEmail" placeholder="Correo electrónico" required
+                class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+            <div class="relative">
+                <input type="password" id="registerPassword" placeholder="Contraseña" required
+                    class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+                <button type="button" class="absolute right-3 top-3" id="toggleRegisterPassword">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-eye">
+                        <path
+                            d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                </button>
+            </div>
+            <div class="relative">
+                <input type="password" id="registerPassword2" placeholder="Contraseña" required
+                    class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+                <button type="button" class="absolute right-3 top-3" id="toggleRegisterPassword">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-eye">
+                        <path
+                            d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                </button>
+            </div>
+            <button type="submit"
+                class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600">Registrarse</button>
+        </form>
+        <p id="register-error-message" class="text-red-500 text-sm mt-2"></p>
+    </div>
+
+
+    <!-- Seccion Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+        // Configuración de Firebase (Ojo con esto -_-)
+        const firebaseConfig = {
+            apiKey: "AIzaSyCb5BkUIu0utLMMoa99rjk8abZ5UKcBOfI",
+            authDomain: "agrotour-sena-7d5d6.firebaseapp.com",
+            projectId: "agrotour-sena-7d5d6",
+            storageBucket: "agrotour-sena-7d5d6.firebasestorage.app",
+            messagingSenderId: "307456328980",
+            appId: "1:307456328980:web:a4b4a2a46f2f9237abae01"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Inicio de Sesión del man (Usuario)
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const errorMessage = document.getElementById("login-error-message");
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                alert("Inicio de sesión exitoso: " + userCredential.user.email);
+                window.location.replace("./docs/pages/home/index.html")
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        });
+
+        // Registro del man nuevo (Usuario)
+        document.getElementById("registerForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const name = document.getElementById("registerName").value;
+            const email = document.getElementById("registerEmail").value;
+            const password = document.getElementById("registerPassword").value;
+            const password2 = document.getElementById("registerPassword2").value;
+            const errorMessage = document.getElementById("register-error-message");
+
+            if (password !== password2) {
+                errorMessage.textContent = "Las contraseñas no coinciden.";
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Guardar datos en Firestore
+                await setDoc(doc(db, "users", user.uid), {
+                    name: name,
+                    email: email,
+                    createdAt: new Date()
+                });
+
+                alert("Registro exitoso: " + name);
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        });
+
+        // Escuchar cambios en la autenticación
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log("Usuario activo:", user.email);
+            } else {
+                console.log("No hay usuario autenticado.");
+            }
+        });
+    </script>
+</body>
+
+</html>

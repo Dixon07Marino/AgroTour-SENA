@@ -1,46 +1,136 @@
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
-    <title>Registrarse</title>
-    <link rel="icon" href="../../public/images/agrotour-logo.png">
-    <link rel="stylesheet" href="styles.css">
+	<title>Registrarse</title>
+	<link rel="icon" href="../../public/images/agrotour-logo.png">
+	<link rel="stylesheet" href="./styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
 	<main class="bg">
 		<div class="container-r">
-			
-			<form class="form" onsubmit="return samePasswords()" id="registro-form">
-			<div class="title"><h3>REGISTRARSE</h3></div>
+
+			<form class="form" id="registerForm">
+				<div class="title">
+					<h3>REGISTRARSE</h3>
+				</div>
 				<div class="info">
 					<div class="inputcont">
 
-					<div class="input">
-						<input type="text" class="user" id="user" placeholder="Nombre de usuario" required autocomplete="off">
-						<i class="fa-solid fa-user"></i>
-					</div>
-					
-					<div class="input"><input type="email" class="email" id="email" placeholder="Correo electrónico" required autocomplete="off"> <i class="fa-solid fa-envelope" id="email" ></i></div>
-					<div class="input"><input type="password" class="pass" id="pass" placeholder="Contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i></div>
-					<div class="input"><input type="password" class="pass" id="pass2" placeholder="Repetir contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon2" onclick="togglePasswords()"></i></div>
+						<div class="input">
+							<input type="text" class="user" id="registerName" placeholder="Nombre de usuario" required
+								autocomplete="off">
+							<i class="fa-solid fa-user"></i>
+						</div>
+
+						<div class="input"><input type="email" class="email" id="registerEmail" placeholder="Correo electrónico"
+								required autocomplete="off"> <i class="fa-solid fa-envelope" id="email"></i></div>
+						<div class="input"><input type="password" class="pass" id="registerPassword" placeholder="Contraseña"
+								required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleRegisterPassword"
+								onclick="togglePasswords()"></i></div>
+						<div class="input"><input type="password" class="pass" id="registerPassword2"
+								placeholder="Repetir contraseña" required autocomplete="off"> <i
+								class="fa-solid fa-eye password-icon" id="toggleIcon2" onclick="togglePasswords()"></i>
+						</div>
 					</div>
 					<div class="buttons">
 					</div>
-					<button type="submit" class="enviar">REGISTRARME</button>
-				<div class="text">
-					<h3>¿Ya tienes cuenta?</h3>
-					<a href="../../index.html">Iniciar sesión</a>
-				</div>
+					<button class="enviar">REGISTRARME</button>
+					<div class="text">
+						<h3>¿Ya tienes cuenta?</h3>
+						<a href="../../index.html">Iniciar sesión</a>
+					</div>
 			</form>
 		</div>
 	</main>
 
-	<script src="main.js"></script>
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+		import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+		import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+		// Configuración de Firebase (Ojo con esto -_-)
+		const firebaseConfig = {
+			apiKey: "AIzaSyCb5BkUIu0utLMMoa99rjk8abZ5UKcBOfI",
+			authDomain: "agrotour-sena-7d5d6.firebaseapp.com",
+			projectId: "agrotour-sena-7d5d6",
+			storageBucket: "agrotour-sena-7d5d6.firebasestorage.app",
+			messagingSenderId: "307456328980",
+			appId: "1:307456328980:web:a4b4a2a46f2f9237abae01"
+		};
+
+		// Inicializar Firebase
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+		const db = getFirestore(app);
+
+		// Inicio de Sesión del man (Usuario)
+		document.getElementById("loginForm").addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const email = document.getElementById("loginEmail").value;
+			const password = document.getElementById("loginPassword").value;
+			const errorMessage = document.getElementById("login-error-message");
+
+			try {
+				const userCredential = await signInWithEmailAndPassword(auth, email, password);
+				alert("Inicio de sesión exitoso: " + userCredential.user.email);
+			} catch (error) {
+				errorMessage.textContent = error.message;
+			}
+		});
+
+		// Registro del man nuevo (Usuario)
+		document.getElementById("registerForm").addEventListener("submit", async (e) => {
+			e.preventDefault();
+			console.log('hello desde aki')
+			const name = document.getElementById("registerName").value;
+			const email = document.getElementById("registerEmail").value;
+			const password = document.getElementById("registerPassword").value;
+			const password2 = document.getElementById("registerPassword2").value;
+			const errorMessage = document.getElementById("register-error-message");
+
+			if (password !== password2) {
+				errorMessage.textContent = "Las contraseñas no coinciden.";
+				return;
+			}
+
+			try {
+				const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+				const user = userCredential.user;
+
+				// Guardar datos en Firestore
+				await setDoc(doc(db, "users", user.uid), {
+					name: name,
+					email: email,
+					createdAt: new Date()
+				});
+
+				alert("Registro exitoso: " + name);
+			} catch (error) {
+				errorMessage.textContent = error.message;
+			}
+		});
+
+		// Escuchar cambios en la autenticación
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				console.log("Usuario activo:", user.email);
+			} else {
+				console.log("No hay usuario autenticado.");
+			}
+		});
+	</script>
 </body>
+
 </html>
