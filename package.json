@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dixon07Marino/AgroTour-SENA.git"
+    "url": "git+https://github.com/Dixon07Marino/AgroTour-SENA"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dixon07Marino/AgroTour-SENA.git/issues"
+    "url": "https://github.com/Dixon07Marino/AgroTour-SENA/issues"
   },
-  "homepage": "https://github.com/Dixon07Marino/AgroTour-SENA.git#readme",
+  "homepage": "https://github.com/Dixon07Marino/AgroTour-SENA#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
     "jspdf": "^2.5.2"
