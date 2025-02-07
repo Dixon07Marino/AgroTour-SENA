@@ -43,7 +43,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
         const data = await response.json();
         alert("Inicio de sesión exitoso");
-        window.location.replace("./pages/home/index.html");
+        window.location.replace("../docs/pages/home/index.html");
     } catch (error) {
         errorMessage.textContent = error.message;
     }
