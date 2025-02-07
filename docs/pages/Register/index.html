@@ -13,35 +13,42 @@
 </head>
 
 <body>
-	<main class="bg">
-		<div class="container-r">
-			
-			<form class="form" onsubmit="return samePasswords()">
-				<img src="../../public/images/cameleon.png">
-			<div class="title"><h3>REGISTRARSE</h3></div>
-				<div class="info">
-					<div class="inputcont">
+    <main class="bg">
+        <div class="container-r">
+            <form class="form" id="registerForm">
+                <img src="../../public/images/cameleon.png">
+                <div class="title"><h3>REGISTRARSE</h3></div>
+                <div class="info">
+                    <div class="inputcont">
+                        <div class="input">
+                            <input type="text" id="registerName" placeholder="Nombre de usuario" required autocomplete="off" name="name">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="input">
+                            <input type="email" id="registerEmail" placeholder="Correo electrónico" required autocomplete="off" name="email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="input">
+                            <input type="password" id="registerPassword" placeholder="Contraseña" required autocomplete="off" name="password">
+                            <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i>
+                        </div>
+                        <div class="input">
+                            <input type="password" id="registerPassword2" placeholder="Repetir contraseña" required autocomplete="off" >
+                            <i class="fa-solid fa-eye password-icon" id="toggleIcon2" onclick="togglePasswords()"></i>
+                        </div>
+                    </div>
+                    <p id="register-error-message" class="error-message"></p>
+                    <button type="submit" class="enviar">REGISTRARME</button>
+                    <div class="text">
+                        <h3>¿Ya tienes cuenta?</h3>
+                        <a href="../../index.html">Iniciar sesión</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="main.js"></script>
 
-					<div class="input">
-						<input type="text" class="user" id="user" placeholder="Nombre de usuario" required autocomplete="off">
-						<i class="fa-solid fa-user"></i>
-					</div>
-					
-					<div class="input"><input type="email" class="email" id="email" placeholder="Correo electrónico" required autocomplete="off"> <i class="fa-solid fa-envelope" id="email" ></i></div>
-					<div class="input"><input type="password" class="pass" id="pass" placeholder="Contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i></div>
-					<div class="input"><input type="password" class="pass" id="pass2" placeholder="Repetir contraseña" required autocomplete="off"> <i class="fa-solid fa-eye password-icon" id="toggleIcon2" onclick="togglePasswords()"></i></div>
-					</div>
-					<div class="buttons">
-					</div>
-					<button type="submit" class="enviar">REGISTRARME</button>
-				<div class="text">
-					<h3>¿Ya tienes cuenta?</h3>
-					<a href="../../index.html">Iniciar sesión</a>
-				</div>
-			</form>
-		</div>
-	</main>
-
-	<script src="main.js"></script>
 </body>
+
 </html>

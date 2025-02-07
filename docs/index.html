@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
     <title>Iniciar sesión</title>
-    <link rel="icon" href="/public/images/logo-del-sena-verde.jpg">
+
     <link rel="stylesheet" href="./styles.css">
 	<link rel="icon" href="public/images/agrotour-logo-diana-whitebg.jpg">
+	<script src="./main.js" defer></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,39 +15,32 @@
 </head>
 
 <body>
-	
-	
-	<main class="bg">
-		<div class="container-l">
-			
-			<form class="form" onsubmit="goHome(event)">
-				<img src="public/images/cameleon.png">
-			<div class="title"><h3>INICIAR SESIÓN</h3></div>
-				<div class="info">
-					<div class="inputcont">
-
-						<div class="input">
-							<input type="text" class="user" id="user" placeholder="Nombre de usuario" required autocomplete="off"> 
-							<i class="fa-solid fa-user"></i> 
-						</div>
-						<div class="input">
-							<input type="password" class="pass" id="pass" placeholder="Contraseña" required autocomplete="off">
-
-							 <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i> 
-						</div>
-					</div>
-					
-					<br>
-					
-					<button type="submit" class="enviar">LOGIN</button>
-				<div class="text">
-					<h3>¿Aún no tienes cuenta?</h3>
-					<a href="pages/Register/index.html">Registrarse</a>
-				</div>
-			</form>
-		</div>
-	</main>
-
-	<script src="main.js"></script>
+    <main class="bg">
+        <div class="container-l">
+            <form id="loginForm" class="form">
+                <img src="public/images/cameleon.png" alt="Logo">
+                <div class="title"><h3>INICIAR SESIÓN</h3></div>
+                <div class="info">
+                    <div class="inputcont">
+                        <div class="input">
+                            <input type="email" id="loginEmail" placeholder="Correo electrónico" required autocomplete="off" name="email"> 
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="input">
+                            <input type="password" id="loginPassword" placeholder="Contraseña" required autocomplete="off" name="password">
+                            <i class="fa-solid fa-eye password-icon" id="toggleIcon1" onclick="togglePasswords()"></i>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="enviar">LOGIN</button>
+                    <p id="login-error-message" class="error-message"></p>
+                    <div class="text">
+                        <h3>¿Aún no tienes cuenta?</h3>
+                        <a href="pages/Register/index.html">Registrarse</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

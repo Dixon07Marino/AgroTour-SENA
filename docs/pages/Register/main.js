@@ -1,17 +1,3 @@
-// GUARDAR DATOS //
-/* function mostrar() {
-    const user = document.getElementById("user").value;
-	const email = document.getElementById("email").value;
-    const password = document.getElementById("pass").value;
-	const password2 = document.getElementById("pass2").value;
-    alert(`Tu informacion es: 
-	Usuario: ${user} 
-	Correo: ${email}
-	Contraseña: ${password}
-    Confirmación contraseña: ${password2}
-    `);
-} */
-
 function togglePasswords() {
     const passwords = document.querySelectorAll('.pass');
     const isPassword = passwords[0].type === 'password';
@@ -41,30 +27,43 @@ function samePasswords () {
 }
 
 //Funcionalidad de registro mediante metodo POST
-document.getElementById("registro-form").addEventListener("submit", async (e) => {
-    e.preventDefault();  // Evita que el formulario se envíe normalmente
-    console.log(e.target.children.user.value);  // Verifica los valores que se están tomando del formulario
+// Manejo del formulario de registro
+const API_URL = 'https://agrotur-back.vercel.app/api/auth/';
 
-    const res = await fetch("http://localhost:4000/api/register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            user: e.target.children.user.value,
-            email: e.target.children.email.value,
-            password: e.target.children.password.value
-        })
-    });
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("registerName").value;
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    const password2 = document.getElementById("registerPassword2").value;
+    const errorMessage = document.getElementById("register-error-message");
 
-    const data = await res.json();  // Lee la respuesta como JSON
-    console.log(data);  // Verifica la respuesta del servidor
+    if (password !== password2) {
+        errorMessage.textContent = "Las contraseñas no coinciden.";
+        return;
+    }
 
-    if (res.ok) {
-        alert('Registro exitoso');
-        window.location.href = "/inicio";  // Redirige al usuario a otra página después del registro
-    } else {
-        alert('Error: ' + data.error);  // Muestra el error si algo salió mal
+    try {
+        const response = await fetch(`${API_URL}register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                password
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(await response.text());
+        }
+
+        const data = await response.json();
+        alert("Registro exitoso del usuario ", name);
+    } catch (error) {
+        errorMessage.textContent = error.message;
     }
 });
 
