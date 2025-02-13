@@ -1,30 +1,3 @@
-function togglePasswords() {
-    const passwords = document.querySelectorAll('.pass');
-    const isPassword = passwords[0].type === 'password';
-
-    passwords.forEach(input => {
-        input.type = isPassword ? 'text' : 'password';
-    });
-
-    const passwordIcons = document.querySelectorAll('.password-icon');
-    passwordIcons.forEach(icon => {
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
-    });
-}
-
-function samePasswords () {
-    var pass = document.getElementById("pass").value;
-    var pass2 = document.getElementById("pass2").value;
-
-    if (pass !== pass2) {
-        alert("Las contraseñas no coinciden. Verifica que ambas sean las mismas.");
-        return false;
-    }
-
-    window.location.href = "../../index.html";
-    return false;
-}
 
 //Funcionalidad de registro mediante metodo POST
 // Manejo del formulario de registro
@@ -67,4 +40,29 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const passwordInputs = [
+        document.getElementById("registerPassword"),
+        document.getElementById("registerPassword2")
+    ];
+    const toggleIcons = [
+        document.getElementById("toggleIcon1"),
+        document.getElementById("toggleIcon2")
+    ];
+
+    toggleIcons.forEach(icon => {
+        icon.addEventListener("click", function () {
+            const isPassword = passwordInputs[0].type === "password";
+
+            passwordInputs.forEach(input => {
+                input.type = isPassword ? "text" : "password";
+            });
+
+            toggleIcons.forEach(icon => {
+                icon.classList.toggle("fa-eye");
+                icon.classList.toggle("fa-eye-slash");
+            });
+        });
+    });
+});
 

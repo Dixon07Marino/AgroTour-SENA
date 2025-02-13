@@ -1,20 +1,3 @@
-function togglePasswords() {
-    // Seleccionar todos los inputs de contraseña
-    const passwords = document.querySelectorAll('.pass');
-    const isPassword = passwords[0].type === 'password';
-
-    // Cambiar el tipo de los inputs
-    passwords.forEach(input => {
-        input.type = isPassword ? 'text' : 'password';
-    });
-
-    // Cambiar los íconos asociados a las contraseñas
-    const passwordIcons = document.querySelectorAll('.password-icon');
-    passwordIcons.forEach(icon => {
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
-    });
-}
 
 const API_URL = 'https://agrotur-back.vercel.app/api/auth/';
 
@@ -47,4 +30,21 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     } catch (error) {
         errorMessage.textContent = error.message;
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.getElementById("loginPassword");
+    const toggleIcon = document.getElementById("toggleIcon1");
+
+    toggleIcon.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleIcon.classList.remove("fa-eye");
+            toggleIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordInput.type = "password";
+            toggleIcon.classList.remove("fa-eye-slash");
+            toggleIcon.classList.add("fa-eye");
+        }
+    });
 });
